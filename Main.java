@@ -32,7 +32,7 @@ class Main {
     Graphics2D canvas = drawingPanel.getGraphics();
     for (int j = 1; j < 14; j++){
       for (int i = 1; i < 14; i++){
-        Card test = new Card(j, Card.Suit.HEART);
+        Card test = new Card(j, Card.Suit.SPADE);
         test.drawCard(canvas, 30, 20, 1 * (i / 5.0));
         text.next();
       }
