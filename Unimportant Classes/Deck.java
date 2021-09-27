@@ -1,3 +1,5 @@
+/* This class is not important to this project
+*/
 public class Deck {
   private Card[][] deck;
   public Deck(){

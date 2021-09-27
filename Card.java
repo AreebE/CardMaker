@@ -52,7 +52,9 @@ public class Card {
    * and 15 blocks wide, where each block is 10px by 10px.
    */
   public void drawCard(Graphics2D canvas, int startX, int startY, double scaleFactor) {
-    if (scaleFactor )
+    if (scaleFactor < 1){
+      scaleFactor = 1.0;
+    }
     CardFaceDrawer artist = getCardDrawer(SUIT);
     AffineTransform oldConditions = canvas.getTransform();
     canvas.translate(startX, startY); // sets origin to upper left corner

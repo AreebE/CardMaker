@@ -109,6 +109,17 @@ public abstract class CardFaceDrawer {
     g.drawPolygon(xCords, yCords, 11);
     // canvas.setColor(getColor());
     // canvas.fillRect(0, 0, size, size);
+    g.translate(s/16, 2*(s/3));
+
+    // g.drawRect(0 ,0, s/4, s/4);
+    drawSymbol(g, s/4);
+    g.translate(s/3, -s/4);
+    // g.drawRect(0, 0, s/4, s/4);
+    drawSymbol(g, s/4);
+        g.translate(s/3, s/4);
+    
+    // g.drawRect(0,0,s/4,s/4);
+    drawSymbol(g, s/4);
   }
 
   /*
