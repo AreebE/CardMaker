@@ -35,7 +35,7 @@ class Main {
     for (int j = 1; j < 14; j++){
       // for (int i = 1; i < 14; i++){
         Card test = new Card(j, Card.Suit.SPADE);
-        test.drawCard(canvas, 30, 20, 2.5);
+        test.drawCard(canvas, 30, 20, 1.5);
         text.next();
       // }
     }

@@ -42,14 +42,15 @@ public abstract class CardFaceDrawer {
     yCords[6] = s;
 
     g.fillPolygon(xCords, yCords, 7);
-    g.setColor(Color.BLACK);
+    g.setColor(getColor());
     g.drawPolygon(xCords, yCords, 7);
+    g.translate((s/16) + (s/3), s/2);
+    drawSymbol(g, s/4);
     // canvas.setColor(getColor());
     // canvas.fillRect(0, 0, size, size);
   }
 
   private void drawQueen(Graphics2D g, int s){
-    g.setColor(Color.YELLOW);
     g.setColor(Color.YELLOW);
     int[] xCords = new int[9];
     int[] yCords = new int[9];
@@ -75,7 +76,7 @@ public abstract class CardFaceDrawer {
       yCords[8] = s;
     
       g.fillPolygon(xCords, yCords, 9);
-      g.setColor(Color.BLACK);
+      g.setColor(getColor());
       g.drawPolygon(xCords, yCords, 9);
     // canvas.setColor(getColor());
     // canvas.fillRect(0, 0, size, size);
@@ -105,7 +106,7 @@ public abstract class CardFaceDrawer {
     yCords[10] = s;
 
     g.fillPolygon(xCords, yCords, 11);
-    g.setColor(Color.BLACK);
+    g.setColor(getColor());
     g.drawPolygon(xCords, yCords, 11);
     // canvas.setColor(getColor());
     // canvas.fillRect(0, 0, size, size);
