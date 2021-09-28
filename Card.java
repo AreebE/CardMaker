@@ -9,7 +9,10 @@ import java.util.ArrayList;
  * The card class is designed to hold a value and a suit,
  * Both assigned when the constructor is called.
  * Afterwards, the card is able to draw itself, so long 
- * as it is given the necessary things like a canvas and starting coordinates
+ * as it is given the necessary things like a canvas 
+ * and starting coordinates
+ * (made mostly by me, before me and Moira worked 
+ * together)
 */
 public class Card {
 

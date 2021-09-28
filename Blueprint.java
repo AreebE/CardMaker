@@ -4,6 +4,7 @@ import java.util.ArrayList;
  * This draws a blueprint for each type of card, from Ace to King.
  * More specifically, this creates certain boxes that the symbols 
  * should be in.
+ * (made by me)
 */
 public class Blueprint {
 

@@ -16,6 +16,7 @@ class Heart extends CardFaceDrawer {
   }
 
    /* As the name of the class implies, this draws a heart for a symbol.
+   * (made by Moira)
    * 
    * @param  canvas    The place where the symbol is drawn
   * @param  size        The size of the box this symbol is in
