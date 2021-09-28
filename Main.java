@@ -32,12 +32,14 @@ class Main {
     Graphics2D canvas = drawingPanel.getGraphics();
     // canvas.translate(50, 50);
     // canvas.rotate(Math.PI / 4);
-    for (int j = 1; j < 14; j++){
-      // for (int i = 1; i < 14; i++){
-        Card test = new Card(j, Card.Suit.SPADE);
-        test.drawCard(canvas, 30, 20, 1.5);
-        text.next();
-      // }
+    for (int i = 0; i < 4; i++){ 
+      for (int j = 1; j < 14; j++){
+        // for (int i = 1; i < 14; i++){
+          Card test = new Card(j, Card.getSuit(i));
+          test.drawCard(canvas, 30, 20, 1.5);
+          text.next();
+        // }
+      }
     }
     
     // System.out.println("reach end");

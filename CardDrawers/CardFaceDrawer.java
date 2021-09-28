@@ -15,10 +15,17 @@ public abstract class CardFaceDrawer {
   */
   abstract public Color getColor();
 
-  /* Draws the symbol representing the cardś suit
+  /* Draws the symbol representing the card's suit
   */
   abstract void drawSymbol(Graphics2D canvas, int size);
 
+  /* Draws the Jack card. It loks like a crown with three points and has 
+   * one gem (the symbol of the suit)
+   * 
+   *  @param  g   the canvas to draw on 
+   *
+   *  @param  s   the square this drawing is located in 
+  */
   private void drawJack(Graphics2D g, int s){
     g.setColor(Color.YELLOW);
     int[] xCords = new int[7];
@@ -50,6 +57,13 @@ public abstract class CardFaceDrawer {
     // canvas.fillRect(0, 0, size, size);
   }
 
+/* Draws the Queen card. It loks like a crown with four points and has 
+   * two gems (the symbol of the suit) 
+   * 
+   *  @param  g   the canvas to draw on 
+   *
+   *  @param  s   the square this drawing is located in 
+  */
   private void drawQueen(Graphics2D g, int s){
     g.setColor(Color.YELLOW);
     int[] xCords = new int[9];
@@ -78,10 +92,24 @@ public abstract class CardFaceDrawer {
       g.fillPolygon(xCords, yCords, 9);
       g.setColor(getColor());
       g.drawPolygon(xCords, yCords, 9);
-    // canvas.setColor(getColor());
-    // canvas.fillRect(0, 0, size, size);
+
+
+      // Drawing gems
+      g.translate(s/16, 2*(s/3));
+      drawSymbol(g, s/4);
+      g.translate(s/3 + s/3 - s/20, 0);
+      drawSymbol(g, s/4);
+
   }
 
+
+  /* Draws the King card. It loks like a crown with five points and has 
+   * three gems (the symbol of the suit)
+   * 
+   *  @param  g   the canvas to draw on 
+   *
+   *  @param  s   the square this drawing is located in 
+  */
   private void drawKing(Graphics2D g, int s){
     // canvas.setColor(Color.YELLOW);
     g.setColor(Color.YELLOW);
@@ -110,21 +138,32 @@ public abstract class CardFaceDrawer {
     g.drawPolygon(xCords, yCords, 11);
     // canvas.setColor(getColor());
     // canvas.fillRect(0, 0, size, size);
+    
+    // Drawing gems
     g.translate(s/16, 2*(s/3));
-
-    // g.drawRect(0 ,0, s/4, s/4);
     drawSymbol(g, s/4);
     g.translate(s/3, -s/4);
-    // g.drawRect(0, 0, s/4, s/4);
     drawSymbol(g, s/4);
-        g.translate(s/3, s/4);
-    
-    // g.drawRect(0,0,s/4,s/4);
+    g.translate(s/3, s/4);
     drawSymbol(g, s/4);
   }
 
-  /*
-  * 
+  /* Draws the shape the program asks for, based on the value of the card
+  *
+  * @param    canvas      the place where the drawing will be drawn on
+  *
+  * @param    x           the x-coordinate of the upper left corner of the 
+  *                       drawing 
+  *
+  * @param    y           the y-coordinate of the upper left corner of the 
+  *                       drawing
+  *
+  * @param    size          the 'box' that the drawing would be placed in 
+  *
+  * @param    isReversed    a boolean that says if this shape should be 
+  *                           reversed 
+  *
+  * @param    value         the value of the card
   */
   public void drawShape(Graphics2D canvas, int x, int y, int size, boolean isReversed, int value){
     AffineTransform oldConditions = canvas.getTransform();

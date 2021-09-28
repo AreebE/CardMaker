@@ -198,4 +198,19 @@ public class Card {
   public int getValue(){
     return VALUE;
   }
+
+  public static Suit getSuit(int s){
+    switch(s){
+      case 0:
+        return Suit.DIAMOND;
+        case 1:
+        return Suit.HEART;
+        case 2:
+        return Suit.CLUB;
+        case 3:
+        return Suit.SPADE;
+    }
+      return null;
+
+  }
 }
