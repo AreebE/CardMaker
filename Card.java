@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
+import java.util.Comparable;
 
 /*
  * The card class is designed to hold a value and a suit,
@@ -14,7 +15,7 @@ import java.util.ArrayList;
  * (made mostly by me, before me and Moira worked 
  * together)
 */
-public class Card {
+public class Card implements Comparable<Card>{
 
   private final int VALUE;
   private final Suit SUIT;
@@ -213,5 +214,15 @@ public class Card {
     }
       return null;
 
+  }
+
+  @Override
+  public int compareTo(Card other){
+    return VALUE - other.getValue();
+  }
+
+  @Override 
+  public String toString(){
+    return VALUE + " of " + SUIT.name();
   }
 }
