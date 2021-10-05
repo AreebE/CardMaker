@@ -81,7 +81,8 @@ public class Blueprint {
 */
   private static ArrayList<Object[]> getLargeBlueprint(int blockSize){
     ArrayList<Object[]> blueprint = new ArrayList<>();
-    blueprint.add(new Object[] {blockSize * 3,
+    blueprint.add(new Object[] {
+      blockSize * 3,
         blockSize * 8, 
         blockSize * 9, false});
     return blueprint;

@@ -16,10 +16,6 @@ import java.util.ArrayList;
 */
 public class Card {
 
-  public enum Suit {
-    SQUARE, SPADE, DIAMOND, HEART, CLUB
-  }
-
   private final int VALUE;
   private final Suit SUIT;
   private final int BLOCK_SIZE = Blueprint.BLOCK_SIZE;
@@ -61,6 +57,7 @@ public class Card {
     CardFaceDrawer artist = getCardDrawer(SUIT);
     AffineTransform oldConditions = canvas.getTransform();
     canvas.translate(startX, startY); // sets origin to upper left corner
+
     int blockSize = (int) (BLOCK_SIZE * scaleFactor);
     int width = 15 * blockSize;
     int height = 25 * blockSize;
@@ -82,7 +79,8 @@ public class Card {
       boolean isReversed = (Boolean) values[3];
       artist.drawShape(canvas, x, y, size, isReversed, VALUE);
     }
-    canvas.setTransform(oldConditions);
+    
+    canvas.setTransform(oldConditions); // resets to original conditions
   }
 
 
