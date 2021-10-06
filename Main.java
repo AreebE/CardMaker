@@ -33,6 +33,9 @@ class Main {
     // canvas.translate(50, 50);
     // canvas.rotate(Math.PI / 4);
     Card[] deck = Deck.getRandomizedDeck();
+    for (Card c: deck){
+      CardDrawer.drawCard(canvas, 10, 10, 1, c);
+    }
     // System.out.println("reach end");
   }
 }

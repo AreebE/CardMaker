@@ -6,9 +6,9 @@ import java.util.Random;
 //need to randomize deck 
 
 public class Deck {
-  final int numOfCards = 52;
+  final static int numOfCards = 52;
 
-  public Card[] getRandomizedDeck() {
+  public static Card[] getRandomizedDeck() {
     Card[] deck = new Card[52];
     Random rand = new Random();
 
