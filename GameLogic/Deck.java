@@ -14,11 +14,11 @@ public class Deck {
 
     //sets the deck up
     for (int i = 0; i < 52; i++) {
-      if (i / 12 == 0) {
+      if (i / 13 == 0) {
         deck[i] = new Card(i%12 +1, Util.Suit.DIAMOND);
-      } else if (i / 12 == 1) {
+      } else if (i / 13 == 1) {
         deck[i] = new Card(i%12 + 1, Util.Suit.HEART);
-      } else if (i / 12 == 2) {
+      } else if (i / 13 == 2) {
         deck[i] = new Card(i%12 + 1, Util.Suit.CLUB);
       } else {
         deck[i] = new Card(i%12 +1, Util.Suit.SPADE);

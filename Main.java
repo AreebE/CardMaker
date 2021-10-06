@@ -35,6 +35,7 @@ class Main {
     Card[] deck = Deck.getRandomizedDeck();
     for (Card c: deck){
       CardDrawer.drawCard(canvas, 10, 10, 1, c);
+      text.next();
     }
     // System.out.println("reach end");
   }
