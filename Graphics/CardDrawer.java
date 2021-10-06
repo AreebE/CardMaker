@@ -1,41 +1,7 @@
-import java.awt.Graphics2D;
-import java.awt.Graphics;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.geom.AffineTransform;
-import java.util.ArrayList;
-import java.lang.Comparable;
+public class CardDrawer {
 
-/*
- * The card class is designed to hold a value and a suit,
- * Both assigned when the constructor is called.
- * Afterwards, the card is able to draw itself, so long 
- * as it is given the necessary things like a canvas 
- * and starting coordinates
- * (made mostly by me, before me and Moira worked 
- * together)
-*/
-public class Card implements Comparable<Card>{
-
-  private final int VALUE;
-  private final Suit SUIT;
-  private final int BLOCK_SIZE = Blueprint.BLOCK_SIZE;
- 
-
-  /*
-   * This is the public constructor that initializes the card
-   *
-   * @param v The value/rank of the card (ex. King or Ace)
-   * 
-   * @param s The suit the card belongs to (ex. Heart)
-   */
-  public Card(int v, Suit s) {
-    VALUE = v;
-    SUIT = s;
-  }
-
-
-  /*
+  private int BLOCK_SIZE = Blueprint.BLOCK_SIZE;
+ /*
    * This method will draw this card, using some helper methods. After getting the
    * appropiate artist for the given suit and translating the origin, it will go
    * on to draw the white card background, an outline, the corners, and the middle
@@ -51,11 +17,13 @@ public class Card implements Comparable<Card>{
    * based on its original size. Each card is 25 blocks high
    * and 15 blocks wide, where each block is 10px by 10px.
    */
-  public void drawCard(Graphics2D canvas, int startX, int startY, double scaleFactor) {
+  public void drawCard(Graphics2D canvas, int startX, int startY, double scaleFactor, Card c) {
+    int value = c.getValue();
+    Util.Suit suit = c.getCardSuit();
     if (scaleFactor < 1){
       scaleFactor = 1.0;
     }
-    CardFaceDrawer artist = getCardDrawer(SUIT);
+    CardFaceDrawer artist = getCardDrawer(suit);
     AffineTransform oldConditions = canvas.getTransform();
     canvas.translate(startX, startY); // sets origin to upper left corner
 
@@ -69,10 +37,10 @@ public class Card implements Comparable<Card>{
     canvas.setColor(Color.WHITE);
     canvas.fillRect(0, 0, width, height);
 
-    drawCorners(canvas, blockSize, height, width, artist);
+    drawCorners(canvas, blockSize, height, width, artist, value);
 
     // Draws the middle part of the card using a blueprint
-    ArrayList<Object[]> shapesToDraw = Blueprint.getBlueprint(VALUE, blockSize);
+    ArrayList<Object[]> shapesToDraw = Blueprint.getBlueprint(value, blockSize);
     for (Object[] values : shapesToDraw) {
       int x = (Integer) values[0];
       int y = (Integer) values[1];
@@ -100,7 +68,7 @@ public class Card implements Comparable<Card>{
    * 
    * @param   artist    The artist that draws the given symbol 
   */
-  private void drawCorners(Graphics2D canvas, int blockSize, int height, int width, CardFaceDrawer artist) {
+  private void drawCorners(Graphics2D canvas, int blockSize, int height, int width, CardFaceDrawer artist, int value) {
 
     Font normalFont = new Font("Monospaced", Font.PLAIN, (int) (blockSize * 1.5));
     AffineTransform inverter = new AffineTransform();
@@ -108,7 +76,7 @@ public class Card implements Comparable<Card>{
     Font reversedFont = normalFont.deriveFont(inverter);
 
     canvas.setColor(artist.getColor());
-    String cardValue = getCardValue(VALUE);
+    String cardValue = getCardValue(value);
 
     // Draws value in upper left corner, then the lower right corner
     canvas.setFont(normalFont);
@@ -161,7 +129,7 @@ public class Card implements Comparable<Card>{
    * 
    * @return  The artist that represents that suit
   */
-  public static CardFaceDrawer getCardDrawer(Suit suit) {
+  public static CardFaceDrawer getCardDrawer(Util.Suit suit) {
     switch (suit) {
       case SQUARE:
         return new Square();
@@ -181,48 +149,5 @@ public class Card implements Comparable<Card>{
       default:
         return null;
     }
-  }
-
-  /*
-   * Gives the suit of the card
-   *
-   * @return  The suit of this card
-  */
-  public Suit getCardSuit() {
-    return SUIT;
-  }
-
-  /*
-   * Gives the value of the card
-   *
-   * @return  The value of this card
-  */
-  public int getValue(){
-    return VALUE;
-  }
-
-  public static Suit getSuit(int s){
-    switch(s){
-      case 0:
-        return Suit.DIAMOND;
-        case 1:
-        return Suit.HEART;
-        case 2:
-        return Suit.CLUB;
-        case 3:
-        return Suit.SPADE;
-    }
-      return null;
-
-  }
-
-  @Override
-  public int compareTo(Card other){
-    return VALUE - other.getValue();
-  }
-
-  @Override 
-  public String toString(){
-    return VALUE + " of " + SUIT.name();
   }
 }

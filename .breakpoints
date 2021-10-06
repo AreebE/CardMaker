@@ -1,11 +1,27 @@
 {
   "files": {
+    "Card.java": [
+      {
+        "id": "24bc0c8f-0976-4ec7-8b77-b2e49e7aacff",
+        "line": 12,
+        "version": 8596,
+        "index": 306
+      }
+    ],
+    "GameLogic/MainComponents": [
+      {
+        "id": "ae0c0499-d8c2-4afb-a46d-274317319c05",
+        "line": 1,
+        "version": 0,
+        "index": 0
+      }
+    ],
     "HandDecider.java": [
       {
         "id": "2df8dd5a-450f-4aed-a0a2-d265f5184d75",
-        "line": 6,
-        "version": 1326,
-        "index": 109
+        "line": 3,
+        "version": 1327,
+        "index": 52
       }
     ],
     "Unimportant Classes/Deck.java": [
