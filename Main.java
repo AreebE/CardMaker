@@ -2,7 +2,7 @@
 // 9 - 17 - 2021 to 9 - 24 - 2021
 // Period 2
 // A2b : Playing cards 
-// areeb
+// areeb & mo
 /*
  * The main goal of this assignment was to be able to draw all cards in a full deck.
  * There are four suits, Club, Diamond, Heart, and Spade
