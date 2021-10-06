@@ -1,6 +1,13 @@
+import java.awt.Graphics2D;
+import java.awt.Graphics;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.geom.AffineTransform;
+import java.util.ArrayList;
+
 public class CardDrawer {
 
-  private int BLOCK_SIZE = Blueprint.BLOCK_SIZE;
+  private static int BLOCK_SIZE = Blueprint.BLOCK_SIZE;
  /*
    * This method will draw this card, using some helper methods. After getting the
    * appropiate artist for the given suit and translating the origin, it will go
@@ -17,7 +24,7 @@ public class CardDrawer {
    * based on its original size. Each card is 25 blocks high
    * and 15 blocks wide, where each block is 10px by 10px.
    */
-  public void drawCard(Graphics2D canvas, int startX, int startY, double scaleFactor, Card c) {
+  public static void drawCard(Graphics2D canvas, int startX, int startY, double scaleFactor, Card c) {
     int value = c.getValue();
     Util.Suit suit = c.getCardSuit();
     if (scaleFactor < 1){
@@ -46,7 +53,7 @@ public class CardDrawer {
       int y = (Integer) values[1];
       int size = (Integer) values[2];
       boolean isReversed = (Boolean) values[3];
-      artist.drawShape(canvas, x, y, size, isReversed, VALUE);
+      artist.drawShape(canvas, x, y, size, isReversed, value);
     }
     
     canvas.setTransform(oldConditions); // resets to original conditions
@@ -68,7 +75,7 @@ public class CardDrawer {
    * 
    * @param   artist    The artist that draws the given symbol 
   */
-  private void drawCorners(Graphics2D canvas, int blockSize, int height, int width, CardFaceDrawer artist, int value) {
+  private static void drawCorners(Graphics2D canvas, int blockSize, int height, int width, CardFaceDrawer artist, int value) {
 
     Font normalFont = new Font("Monospaced", Font.PLAIN, (int) (blockSize * 1.5));
     AffineTransform inverter = new AffineTransform();
@@ -131,9 +138,6 @@ public class CardDrawer {
   */
   public static CardFaceDrawer getCardDrawer(Util.Suit suit) {
     switch (suit) {
-      case SQUARE:
-        return new Square();
-
       case SPADE:
         return new Spade();
 

@@ -8,7 +8,7 @@ import java.util.Random;
 public class Deck {
   final int numOfCards = 52;
 
-  public void deck() {
+  public Card[] getRandomizedDeck() {
     Card[] deck = new Card[52];
     Random rand = new Random();
 
@@ -42,7 +42,7 @@ public class Deck {
       deck[m] = aCard;
       
     }
-
+    return deck;
   }
 
 }
