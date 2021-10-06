@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
-import java.util.Comparable;
+import java.lang.Comparable;
 
 /*
  * The card class is designed to hold a value and a suit,
