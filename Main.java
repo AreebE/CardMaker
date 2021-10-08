@@ -33,6 +33,7 @@ class Main {
     // canvas.translate(50, 50);
     // canvas.rotate(Math.PI / 4);
     Card[] deck = Deck.getRandomizedDeck();
+    String[] players = Player.getListOfPlayers();
     for (Card c: deck){
       CardDrawer.drawCard(canvas, 10, 10, 1, c);
       text.next();

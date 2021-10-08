@@ -1,6 +1,7 @@
 
 //This will randomly assign cards in the deck to ransom pistions 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 //need to randomize deck 
@@ -15,19 +16,20 @@ public class Deck {
     //sets the deck up
     for (int i = 0; i < 52; i++) {
       if (i / 13 == 0) {
-        deck[i] = new Card(i%12 +1, Util.Suit.DIAMOND);
+        deck[i] = new Card(i%13 +1, Util.Suit.DIAMOND);
       } else if (i / 13 == 1) {
-        deck[i] = new Card(i%12 + 1, Util.Suit.HEART);
+        deck[i] = new Card(i%13 + 1, Util.Suit.HEART);
       } else if (i / 13 == 2) {
-        deck[i] = new Card(i%12 + 1, Util.Suit.CLUB);
+        deck[i] = new Card(i%13 + 1, Util.Suit.CLUB);
       } else {
-        deck[i] = new Card(i%12 +1, Util.Suit.SPADE);
+        deck[i] = new Card(i%13 +1, Util.Suit.SPADE);
       }
 
     }
 
+      //System.out.println(Arrays.toString(deck));
     //re-arranges the deck 
-    for (int j = 0; j < 52; j++) {
+    for (int j = 0; j < 100; j++) {
       //switches the place of two random cards
       int n = (int) (Math.random() * 51);
       int m = (int) (Math.random() * 51);
