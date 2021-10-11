@@ -23,6 +23,7 @@ import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.Scanner;
+import java.util.HashSet;
 class Main {
   public static void main(String[] args) {
     // System.out.println("Hello world!");
@@ -32,11 +33,20 @@ class Main {
     Graphics2D canvas = drawingPanel.getGraphics();
     // canvas.translate(50, 50);
     // canvas.rotate(Math.PI / 4);
-    Card[] deck = Deck.getRandomizedDeck();
-    for (Card c: deck){
-      CardDrawer.drawCard(canvas, 10, 10, 1, c);
-      text.next();
-    }
+    Deck deck = new Deck();
+    // for (Card c: deck){
+      // CardDrawer.drawCard(canvas, 10, 10, 1, c);
+      // text.next();
+    // }
+    HashSet<Card> allCards = new HashSet<>();
+    
+    // for (int i = 0; i < Deck.numOfCards; i++){
+      // Card c = deck.drawCard();
+      // System.out.println(c);
+      // allCards.add(c);
+    // }
+    // System.out.println(allCards.size());
     // System.out.println("reach end");
+    new Game();
   }
 }

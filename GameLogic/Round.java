@@ -61,7 +61,7 @@ public class Round {
     calledPlayers = 0;
     foldedPlayers = 0;
     Deck d = new Deck();
-    d.randomizeDeck(TIMES_TO_SHUFFLE);
+    // d.randomizeDeck(TIMES_TO_SHUFFLE);
     for (Player p : players) {
       p.setCard(d.drawCard());
       if (p.hasCalled()){
