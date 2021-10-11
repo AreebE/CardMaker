@@ -8,327 +8,327 @@ public class HandTester {
 
     // Royal Flushes 
     Card[] royalFlush1 = new Card[] {
-      new Card(11, Util.Suit.HEART),
-      new Card(10, Util.Suit.HEART),
-      new Card(12, Util.Suit.HEART),
-      new Card(1, Util.Suit.HEART),
-      new Card(13, Util.Suit.HEART)
+      new Card(Util.Rank.JACK, Util.Suit.HEARTS),
+      new Card(Util.Rank.TEN, Util.Suit.HEARTS),
+      new Card(Util.Rank.QUEEN, Util.Suit.HEARTS),
+      new Card(Util.Rank.ACE, Util.Suit.HEARTS),
+      new Card(Util.Rank.KING, Util.Suit.HEARTS)
     };
 
     Card[] royalFlush2 = new Card[] {
-      new Card(11, Util.Suit.SPADE),
-      new Card(10, Util.Suit.SPADE),
-      new Card(12, Util.Suit.SPADE),
-      new Card(1, Util.Suit.SPADE),
-      new Card(13, Util.Suit.SPADE)
+      new Card(Util.Rank.JACK, Util.Suit.SPADES),
+      new Card(Util.Rank.TEN, Util.Suit.SPADES),
+      new Card(Util.Rank.QUEEN, Util.Suit.SPADES),
+      new Card(Util.Rank.ACE, Util.Suit.SPADES),
+      new Card(Util.Rank.KING, Util.Suit.SPADES)
     };
 
     // Straight Flushes
     Card[] straightFlush1 = new Card[] {
-      new Card(11, Util.Suit.CLUB),
-      new Card(10, Util.Suit. CLUB),
-      new Card(12, Util.Suit.CLUB),
-      new Card(9, Util.Suit.CLUB),
-      new Card(13, Util.Suit.CLUB)
+      new Card(Util.Rank.JACK, Util.Suit.CLUBS),
+      new Card(Util.Rank.TEN, Util.Suit.CLUBS),
+      new Card(Util.Rank.QUEEN, Util.Suit.CLUBS),
+      new Card(Util.Rank.NINE, Util.Suit.CLUBS),
+      new Card(Util.Rank.KING, Util.Suit.CLUBS)
     };
 
     Card[] straightFlush2 = new Card[] {
-      new Card(1, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(4, Util.Suit.DIAMOND),
-      new Card(5, Util.Suit.DIAMOND)
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.FOUR, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.FIVE, Util.Suit.DIAMONDS)
     };
 
     Card[] straightFlush3 = new Card[] {
-      new Card(7, Util.Suit.DIAMOND),
-      new Card(6, Util.Suit.DIAMOND),
-      new Card(8, Util.Suit.DIAMOND),
-      new Card(5, Util.Suit.DIAMOND),
-      new Card(4, Util.Suit.DIAMOND)
+      new Card(Util.Rank.SEVEN, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.SIX, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.EIGHT, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.FIVE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.FOUR, Util.Suit.DIAMONDS)
     };
 
 
     // Four of a kind
     Card[] fourKind3 = new Card[] {
-      new Card(7, Util.Suit.DIAMOND),
-      new Card(7, Util.Suit.SPADE),
-      new Card(7, Util.Suit.CLUB),
-      new Card(7, Util.Suit.HEART),
-      new Card(13, Util.Suit.DIAMOND)
+      new Card(Util.Rank.SEVEN, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.SEVEN, Util.Suit.SPADES),
+      new Card(Util.Rank.SEVEN, Util.Suit.CLUBS),
+      new Card(Util.Rank.SEVEN, Util.Suit.HEARTS),
+      new Card(Util.Rank.KING, Util.Suit.DIAMONDS)
     };
 
     Card[] fourKind1 = new Card[] {
-      new Card(7, Util.Suit.DIAMOND),
-      new Card(7, Util.Suit.SPADE),
-      new Card(7, Util.Suit.CLUB),
-      new Card(7, Util.Suit.HEART),
-      new Card(4, Util.Suit.DIAMOND)
+      new Card(Util.Rank.SEVEN, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.SEVEN, Util.Suit.SPADES),
+      new Card(Util.Rank.SEVEN, Util.Suit.CLUBS),
+      new Card(Util.Rank.SEVEN, Util.Suit.HEARTS),
+      new Card(Util.Rank.FOUR, Util.Suit.DIAMONDS)
     };
 
     Card[] fourKind2 = new Card[] {
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(3, Util.Suit.SPADE),
-      new Card(3, Util.Suit.CLUB),
-      new Card(3, Util.Suit.HEART),
-      new Card(7, Util.Suit.DIAMOND)
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.THREE, Util.Suit.SPADES),
+      new Card(Util.Rank.THREE, Util.Suit.CLUBS),
+      new Card(Util.Rank.THREE, Util.Suit.HEARTS),
+      new Card(Util.Rank.SEVEN, Util.Suit.DIAMONDS)
     };
 
     Card[] fourKind4 = new Card[] {
-      new Card(5, Util.Suit.DIAMOND),
-      new Card(5, Util.Suit.SPADE),
-      new Card(5, Util.Suit.CLUB),
-      new Card(5, Util.Suit.HEART),
-      new Card(1, Util.Suit.DIAMOND)
+      new Card(Util.Rank.FIVE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.FIVE, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.HEARTS),
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS)
     };
     
 
     // Full houses
     Card[] fullHouse1 = new Card[] {
-      new Card(1, Util.Suit.DIAMOND),
-      new Card(1, Util.Suit.SPADE),
-      new Card(1, Util.Suit.CLUB),
-      new Card(4, Util.Suit.HEART),
-      new Card(4, Util.Suit.DIAMOND)
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.ACE, Util.Suit.SPADES),
+      new Card(Util.Rank.ACE, Util.Suit.CLUBS),
+      new Card(Util.Rank.FOUR, Util.Suit.HEARTS),
+      new Card(Util.Rank.FOUR, Util.Suit.DIAMONDS)
     };
 
     Card[] fullHouse5 = new Card[] {
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.SPADE),
-      new Card(2, Util.Suit.CLUB),
-      new Card(4, Util.Suit.HEART),
-      new Card(4, Util.Suit.DIAMOND)
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.SPADES),
+      new Card(Util.Rank.TWO, Util.Suit.CLUBS),
+      new Card(Util.Rank.FOUR, Util.Suit.HEARTS),
+      new Card(Util.Rank.FOUR, Util.Suit.DIAMONDS)
     };
 
     Card[] fullHouse4 = new Card[] {
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.SPADE),
-      new Card(2, Util.Suit.CLUB),
-      new Card(3, Util.Suit.HEART),
-      new Card(3, Util.Suit.DIAMOND)
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.SPADES),
+      new Card(Util.Rank.TWO, Util.Suit.CLUBS),
+      new Card(Util.Rank.THREE, Util.Suit.HEARTS),
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS)
     };
 
     Card[] fullHouse2 = new Card[] {
-      new Card(13, Util.Suit.DIAMOND),
-      new Card(13, Util.Suit.SPADE),
-      new Card(13, Util.Suit.CLUB),
-      new Card(12, Util.Suit.HEART),
-      new Card(12, Util.Suit.DIAMOND)
+      new Card(Util.Rank.KING, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.KING, Util.Suit.SPADES),
+      new Card(Util.Rank.KING, Util.Suit.CLUBS),
+      new Card(Util.Rank.QUEEN, Util.Suit.HEARTS),
+      new Card(Util.Rank.QUEEN, Util.Suit.DIAMONDS)
     };
 
     Card[] fullHouse3 = new Card[] {
-      new Card(12, Util.Suit.DIAMOND),
-      new Card(12, Util.Suit.SPADE),
-      new Card(12, Util.Suit.CLUB),
-      new Card(1, Util.Suit.HEART),
-      new Card(1, Util.Suit.DIAMOND)
+      new Card(Util.Rank.QUEEN, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.QUEEN, Util.Suit.SPADES),
+      new Card(Util.Rank.QUEEN, Util.Suit.CLUBS),
+      new Card(Util.Rank.ACE, Util.Suit.HEARTS),
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS)
     };
     
     // Flushes
     Card[] flush1 = new Card[]{
-      new Card(1, Util.Suit.DIAMOND),
-      new Card(4, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(6, Util.Suit.DIAMOND),
-      new Card(7, Util.Suit.DIAMOND)
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.FOUR, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.SIX, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.SEVEN, Util.Suit.DIAMONDS)
     };
 
     Card[] flush2 = new Card[]{
-      new Card(5, Util.Suit.CLUB),
-      new Card(4, Util.Suit.CLUB),
-      new Card(2, Util.Suit.CLUB),
-      new Card(6, Util.Suit.CLUB),
-      new Card(6, Util.Suit.CLUB)
+      new Card(Util.Rank.FIVE, Util.Suit.CLUBS),
+      new Card(Util.Rank.FOUR, Util.Suit.CLUBS),
+      new Card(Util.Rank.TWO, Util.Suit.CLUBS),
+      new Card(Util.Rank.SIX, Util.Suit.CLUBS),
+      new Card(Util.Rank.SIX, Util.Suit.CLUBS)
     };
     
     Card[] flush3 = new Card[]{
-      new Card(13, Util.Suit.DIAMOND),
-      new Card(4, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(6, Util.Suit.DIAMOND),
-      new Card(7, Util.Suit.DIAMOND)
+      new Card(Util.Rank.KING, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.FOUR, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.SIX, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.SEVEN, Util.Suit.DIAMONDS)
     };
 
     Card[] flush4 = new Card[]{
-      new Card(1, Util.Suit.DIAMOND),
-      new Card(4, Util.Suit.DIAMOND),
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(6, Util.Suit.DIAMOND),
-      new Card(7, Util.Suit.DIAMOND)
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.FOUR, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.SIX, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.SEVEN, Util.Suit.DIAMONDS)
     };
 
     // Straights
     Card[] straight1 = new Card[]{
-      new Card(1, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(4, Util.Suit.CLUB),
-      new Card(5, Util.Suit.DIAMOND)
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.FOUR, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.DIAMONDS)
     };
 
     Card[] straight2 = new Card[]{
-      new Card(1, Util.Suit.DIAMOND),
-      new Card(10, Util.Suit.DIAMOND),
-      new Card(13, Util.Suit.DIAMOND),
-      new Card(12, Util.Suit.CLUB),
-      new Card(11, Util.Suit.DIAMOND)
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TEN, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.KING, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.QUEEN, Util.Suit.CLUBS),
+      new Card(Util.Rank.JACK, Util.Suit.DIAMONDS)
     };
 
     Card[] straight3 = new Card[]{
-      new Card(5, Util.Suit.DIAMOND),
-      new Card(6, Util.Suit.DIAMOND),
-      new Card(7, Util.Suit.DIAMOND),
-      new Card(8, Util.Suit.CLUB),
-      new Card(9, Util.Suit.DIAMOND)
+      new Card(Util.Rank.FIVE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.SIX, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.SEVEN, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.EIGHT, Util.Suit.CLUBS),
+      new Card(Util.Rank.NINE, Util.Suit.DIAMONDS)
     };
 
     // Three of a kind 
     Card[] threeKind1 = new Card[]{
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.HEART),
-      new Card(2, Util.Suit.CLUB),
-      new Card(4, Util.Suit.CLUB),
-      new Card(5, Util.Suit.DIAMOND)
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.HEARTS),
+      new Card(Util.Rank.TWO, Util.Suit.CLUBS),
+      new Card(Util.Rank.FOUR, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.DIAMONDS)
     };
 
     Card[] threeKind2 = new Card[]{
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.HEART),
-      new Card(2, Util.Suit.CLUB),
-      new Card(5, Util.Suit.CLUB),
-      new Card(6, Util.Suit.DIAMOND)
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.HEARTS),
+      new Card(Util.Rank.TWO, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.CLUBS),
+      new Card(Util.Rank.SIX, Util.Suit.DIAMONDS)
     };
 
     Card[] threeKind3 = new Card[]{
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.HEART),
-      new Card(2, Util.Suit.CLUB),
-      new Card(3, Util.Suit.CLUB),
-      new Card(6, Util.Suit.DIAMOND)
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.HEARTS),
+      new Card(Util.Rank.TWO, Util.Suit.CLUBS),
+      new Card(Util.Rank.THREE, Util.Suit.CLUBS),
+      new Card(Util.Rank.SIX, Util.Suit.DIAMONDS)
     };
 
     Card[] threeKind4 = new Card[]{
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(3, Util.Suit.HEART),
-      new Card(3, Util.Suit.CLUB),
-      new Card(1, Util.Suit.CLUB),
-      new Card(11, Util.Suit.DIAMOND)
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.THREE, Util.Suit.HEARTS),
+      new Card(Util.Rank.THREE, Util.Suit.CLUBS),
+      new Card(Util.Rank.ACE, Util.Suit.CLUBS),
+      new Card(Util.Rank.JACK, Util.Suit.DIAMONDS)
     };
 
     Card[] threeKind5 = new Card[]{
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(3, Util.Suit.HEART),
-      new Card(3, Util.Suit.CLUB),
-      new Card(13, Util.Suit.CLUB),
-      new Card(11, Util.Suit.DIAMOND)
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.THREE, Util.Suit.HEARTS),
+      new Card(Util.Rank.THREE, Util.Suit.CLUBS),
+      new Card(Util.Rank.KING, Util.Suit.CLUBS),
+      new Card(Util.Rank.JACK, Util.Suit.DIAMONDS)
     };
 
     // Two pairs
     Card[] twoPair1 = new Card[]{
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.HEART),
-      new Card(5, Util.Suit.CLUB),
-      new Card(5, Util.Suit.SPADE),
-      new Card(1, Util.Suit.DIAMOND)
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.HEARTS),
+      new Card(Util.Rank.FIVE, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS)
     };
 
      Card[] twoPair2 = new Card[]{
-      new Card(1, Util.Suit.DIAMOND),
-      new Card(1, Util.Suit.HEART),
-      new Card(6, Util.Suit.CLUB),
-      new Card(6, Util.Suit.SPADE),
-      new Card(3, Util.Suit.DIAMOND)
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.ACE, Util.Suit.HEARTS),
+      new Card(Util.Rank.SIX, Util.Suit.CLUBS),
+      new Card(Util.Rank.SIX, Util.Suit.SPADES),
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS)
     };
 
      Card[] twoPair3 = new Card[]{
-      new Card(13, Util.Suit.DIAMOND),
-      new Card(13, Util.Suit.HEART),
-      new Card(1, Util.Suit.CLUB),
-      new Card(1, Util.Suit.SPADE),
-      new Card(2, Util.Suit.DIAMOND)
+      new Card(Util.Rank.KING, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.KING, Util.Suit.HEARTS),
+      new Card(Util.Rank.ACE, Util.Suit.CLUBS),
+      new Card(Util.Rank.ACE, Util.Suit.SPADES),
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS)
     };
     
      Card[] twoPair4 = new Card[]{
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.HEART),
-      new Card(5, Util.Suit.CLUB),
-      new Card(5, Util.Suit.SPADE),
-      new Card(3, Util.Suit.DIAMOND)
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.HEARTS),
+      new Card(Util.Rank.FIVE, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS)
     };
 
      Card[] twoPair5 = new Card[]{
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.HEART),
-      new Card(5, Util.Suit.CLUB),
-      new Card(5, Util.Suit.SPADE),
-      new Card(7, Util.Suit.DIAMOND)
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.HEARTS),
+      new Card(Util.Rank.FIVE, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.SEVEN, Util.Suit.DIAMONDS)
     };
 
     // One pair
     Card[] onePair1 = new Card[]{
-      new Card(2, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.HEART),
-      new Card(6, Util.Suit.CLUB),
-      new Card(5, Util.Suit.SPADE),
-      new Card(1, Util.Suit.DIAMOND)
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.HEARTS),
+      new Card(Util.Rank.SIX, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS)
     };
 
     Card[] onePair2 = new Card[]{
-      new Card(10, Util.Suit.DIAMOND),
-      new Card(10, Util.Suit.HEART),
-      new Card(6, Util.Suit.CLUB),
-      new Card(5, Util.Suit.SPADE),
-      new Card(2, Util.Suit.DIAMOND)
+      new Card(Util.Rank.TEN, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TEN, Util.Suit.HEARTS),
+      new Card(Util.Rank.SIX, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.TWO, Util.Suit.DIAMONDS)
     };
 
     Card[] onePair3 = new Card[]{
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(3, Util.Suit.HEART),
-      new Card(6, Util.Suit.CLUB),
-      new Card(5, Util.Suit.SPADE),
-      new Card(1, Util.Suit.DIAMOND)
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.THREE, Util.Suit.HEARTS),
+      new Card(Util.Rank.SIX, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS)
     };
 
     Card[] onePair4 = new Card[]{
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(3, Util.Suit.HEART),
-      new Card(7, Util.Suit.CLUB),
-      new Card(5, Util.Suit.SPADE),
-      new Card(1, Util.Suit.DIAMOND)
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.THREE, Util.Suit.HEARTS),
+      new Card(Util.Rank.SEVEN, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS)
     };
     
   // Highest
 
     Card[] highest1 = new Card[]{
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(2, Util.Suit.HEART),
-      new Card(6, Util.Suit.CLUB),
-      new Card(5, Util.Suit.SPADE),
-      new Card(1, Util.Suit.DIAMOND)
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TWO, Util.Suit.HEARTS),
+      new Card(Util.Rank.SIX, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS)
     };
     
     Card[] highest2 = new Card[]{
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(10, Util.Suit.HEART),
-      new Card(6, Util.Suit.CLUB),
-      new Card(5, Util.Suit.SPADE),
-      new Card(1, Util.Suit.DIAMOND)
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.TEN, Util.Suit.HEARTS),
+      new Card(Util.Rank.SIX, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS)
     };
 
     Card[] highest3 = new Card[]{
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(9, Util.Suit.HEART),
-      new Card(4, Util.Suit.CLUB),
-      new Card(5, Util.Suit.SPADE),
-      new Card(1, Util.Suit.DIAMOND)
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.NINE, Util.Suit.HEARTS),
+      new Card(Util.Rank.FOUR, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS)
     };
 
     Card[] highest4 = new Card[]{
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(9, Util.Suit.HEART),
-      new Card(10, Util.Suit.CLUB),
-      new Card(5, Util.Suit.SPADE),
-      new Card(1, Util.Suit.DIAMOND)
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.NINE, Util.Suit.HEARTS),
+      new Card(Util.Rank.TEN, Util.Suit.CLUBS),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.ACE, Util.Suit.DIAMONDS)
     };
 
     // System.out.println(test.getClass() + "|" + test.getHandType());
@@ -421,22 +421,22 @@ public class HandTester {
     testSorting.add(f4);  
 
     // System.out.println(Hand.timesCalled);
-    // Collections.sort(testSorting);
+    Collections.sort(testSorting);
     // System.out.println(hand[0]);
     // System.out.println(test.getCardsToCompare());
-    // for (Hand h: testSorting){
-      // System.out.println(h + "\n");
-    // }
+    for (Hand h: testSorting){
+      System.out.println(h + "\n");
+    }
 
     // Test hand 
     Card[] setOfCards = new Card[]{
-      new Card(2, Util.Suit.SPADE),
-      new Card(1, Util.Suit.SPADE),
-      new Card(6, Util.Suit.SPADE),
-      new Card(3, Util.Suit.DIAMOND),
-      new Card(4, Util.Suit.SPADE),
-      new Card(5, Util.Suit.SPADE),
-      new Card(7, Util.Suit.DIAMOND)
+      new Card(Util.Rank.TWO, Util.Suit.SPADES),
+      new Card(Util.Rank.ACE, Util.Suit.SPADES),
+      new Card(Util.Rank.SIX, Util.Suit.SPADES),
+      new Card(Util.Rank.THREE, Util.Suit.DIAMONDS),
+      new Card(Util.Rank.FOUR, Util.Suit.SPADES),
+      new Card(Util.Rank.FIVE, Util.Suit.SPADES),
+      new Card(Util.Rank.SEVEN, Util.Suit.DIAMONDS)
     };
     Hand h = maker.getBestHand(setOfCards);
 

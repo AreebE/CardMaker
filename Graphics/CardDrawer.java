@@ -25,8 +25,11 @@ public class CardDrawer {
    * and 15 blocks wide, where each block is 10px by 10px.
    */
   public static void drawCard(Graphics2D canvas, int startX, int startY, double scaleFactor, Card c) {
-    int value = c.getValue();
-    Util.Suit suit = c.getCardSuit();
+    int value = Util.getValue(c.getRank());
+    if (value == Util.ACE_HIGH){
+      value = Util.ACE;
+    }
+    Util.Suit suit = c.getSuit();
     if (scaleFactor < 1){
       scaleFactor = 1.0;
     }
@@ -138,16 +141,16 @@ public class CardDrawer {
   */
   public static CardFaceDrawer getCardDrawer(Util.Suit suit) {
     switch (suit) {
-      case SPADE:
+      case SPADES:
         return new Spade();
 
-      case CLUB:
+      case CLUBS:
         return new Club();
 
-      case HEART:
+      case HEARTS:
         return new Heart();
 
-      case DIAMOND:
+      case DIAMONDS:
         return new Diamond();
 
       default:

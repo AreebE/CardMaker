@@ -15,7 +15,7 @@ public class ThreeOfAKind extends Hand {
     int[] orderedCards = new int[Util.HAND_SIZE - 2];
 
     for (int i = 0; i < hand.length; i++) {
-      int value = Util.interpretValue(hand[i].getValue());
+      int value = Util.getValue(hand[i].getRank());
       if (values.contains(value)){
         int j = 0;
         while (j < orderedCards.length && orderedCards[j] != value) {

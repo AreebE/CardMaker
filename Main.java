@@ -46,7 +46,18 @@ class Main {
       // allCards.add(c);
     // }
     // System.out.println(allCards.size());
-    // System.out.println("reach end");
-    new Game();
+// =======
+    // Card[] deck = Deck.getRandomizedDeck();
+    // String[] players = Player.getListOfPlayers();
+    // for (int i = 0; i < 52; i++)
+    // {
+      // CardDrawer.drawCard(canvas, 10, 10, 1, deck.drawCard());
+      // text.next();
+      // System.out.println(i);
+    // }
+
+    HandTester.testMethods();
+
+    // new Game();
   }
 }

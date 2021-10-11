@@ -16,22 +16,12 @@ public class Game {
   }};
 
   private static HashMap<String, Integer> acceptableNumberInput = new HashMap<>() {{
-      put("one",1);
-      put("1",1);
       put("two",2);
       put("2",2);
       put("three",3);
       put("3",3);
       put("four",4);
       put("4",4);
-      put("five",5);
-      put("5",5);
-      put("six",6);
-      put("6",6);
-      put("seven",7);
-      put("7",7);
-      put("eight",8);
-      put("8",8);
   }};
   
   private final static int MAX_PLAYERS = 8;

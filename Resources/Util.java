@@ -1,8 +1,8 @@
-2import java.util.HashMap;
+import java.util.HashMap;
 
 public class Util {
   public enum Suit {
-    SPADE, DIAMOND, HEART, CLUB
+    SPADES, DIAMONDS, HEARTS, CLUBS
   }
   
   public static final int CARDS_ON_TABLE = 7;
@@ -18,6 +18,10 @@ public class Util {
   public static final int ONE_PAIR = 2;
   public static final int HIGH_CARD = 1;
 
+
+  public static enum Rank {
+    ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
+  }
   public static final int ACE = 1;
   public static final int TWO = 2;
   public static final int THREE = 3;
@@ -50,6 +54,55 @@ public class Util {
   // private static final HashMap<Character, Integer> charToValue = new HashMap<>{
 
   // };
+
+  private static HashMap<Rank, Integer> ranksToValues = new HashMap<>(){{
+      put(Rank.ACE, 14);
+      put(Rank.TWO, 2);
+      put(Rank.THREE, 3);
+      put(Rank.FOUR, 4);
+      put(Rank.FIVE, 5);
+      put(Rank.SIX, 6);
+      put(Rank.SEVEN, 7);
+      put(Rank.EIGHT, 8);
+      put(Rank.NINE,9);
+      put(Rank.TEN, 10);
+      put(Rank.JACK, 11);
+      put(Rank.QUEEN, 12);
+      put(Rank.KING, 13);
+  }};
+  
+  public static int getValue(Rank rank){
+    return ranksToValues.get(rank);
+  }
+
+  
+  private static HashMap<Integer, Rank> valuesToRanks = new HashMap<>(){{
+    put(1, Rank.ACE);
+    put(2, Rank.TWO);
+    put(3, Rank.THREE);
+    put(4, Rank.FOUR);
+    put(5, Rank.FIVE);
+    put(6, Rank.SIX);
+    put(7, Rank.SEVEN);
+    put(8, Rank.EIGHT);
+    put(9, Rank.NINE);
+    put(10, Rank.TEN);
+    put(11, Rank.JACK);
+    put(12, Rank.QUEEN);
+    put(13, Rank.KING);
+  }};
+
+  public static Rank getRank(int value){
+    return valuesToRanks.get(value);
+  }
+
+  private static Suit[] suits = new Suit[]{
+    Suit.CLUBS, Suit.DIAMONDS, Suit.HEARTS, Suit.SPADES
+  };
+
+  public static Suit getSuit(int index){
+    return suits[index];
+  } 
 
   public static int decipherCardValue(char card){
     switch (card){

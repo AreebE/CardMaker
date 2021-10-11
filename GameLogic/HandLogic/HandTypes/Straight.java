@@ -6,18 +6,19 @@ public class Straight extends Hand {
   
   @Override
   protected String createString(Card[] hand){ 
-    int bestValue = Util.interpretValue(hand[0].getValue());
+    int bestValue = Util.getValue(hand[0].getRank());
     boolean containsFive = false;
     
     for (int i = 1; i < hand.length; i++){
-      int value = Util.interpretValue(hand[i].getValue());
-      if (bestValue < value)
+      int value = Util.getValue(hand[i].getRank());
+      if (bestValue < value){
         bestValue = value;
-      containsFive = value == 5;
+      }
+      containsFive = value == Util.getValue(Util.Rank.FIVE);
     }  
 
-    if (bestValue == Util.ACE_HIGH && containsFive){
-      return Util.FIVE + "";
+    if (bestValue == Util.getValue(Util.Rank.ACE) && containsFive){
+      return Util.getValue(Util.Rank.FIVE) + "";
     }
     return Util.translateValueToChar(bestValue) + "";
   }

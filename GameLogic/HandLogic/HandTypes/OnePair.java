@@ -15,7 +15,7 @@ public class OnePair extends Hand {
     int[] orderedCards = new int[Util.HAND_SIZE - 1];
    
     for (int i = 0; i < hand.length; i++){
-      int val = Util.interpretValue(hand[i].getValue());
+      int val = Util.getValue(hand[i].getRank());
       if (values.contains(val)){
         int j = 0;
         while (j < orderedCards.length && orderedCards[j] != val)

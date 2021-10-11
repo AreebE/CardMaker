@@ -17,7 +17,7 @@ import java.lang.Comparable;
 */
 public class Card implements Comparable<Card>{
 
-  private final int VALUE;
+  private final Util.Rank RANK;
   private final Util.Suit SUIT;
  
 
@@ -28,8 +28,8 @@ public class Card implements Comparable<Card>{
    * 
    * @param s The suit the card belongs to (ex. Heart)
    */
-  public Card(int v, Util.Suit s) {
-    VALUE = v;
+  public Card(Util.Rank r, Util.Suit s) {
+    RANK = r;
     SUIT = s;
   }
 
@@ -39,7 +39,7 @@ public class Card implements Comparable<Card>{
    *
    * @return  The suit of this card
   */
-  public Util.Suit getCardSuit() {
+  public Util.Suit getSuit() {
     return SUIT;
   }
 
@@ -48,32 +48,17 @@ public class Card implements Comparable<Card>{
    *
    * @return  The value of this card
   */
-  public int getValue(){
-    return VALUE;
-  }
-
-  public static Util.Suit getSuit(int s){
-    switch(s){
-      case 0:
-        return Util.Suit.DIAMOND;
-        case 1:
-        return Util.Suit.HEART;
-        case 2:
-        return Util.Suit.CLUB;
-        case 3:
-        return Util.Suit.SPADE;
-    }
-      return null;
-
+  public Util.Rank getRank(){
+    return RANK;
   }
 
   @Override
   public int compareTo(Card other){
-    return VALUE - other.getValue();
+    return Util.getValue(RANK) - Util.getValue(other.getRank());
   }
 
   @Override 
   public String toString(){
-    return VALUE + " of " + SUIT.name();
+    return RANK.name() + " of " + SUIT.name();
   }
 }

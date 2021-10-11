@@ -13,7 +13,7 @@ public class FourOfAKind extends Hand {
   protected String createString(Card[] hand){ 
     HashMap<Integer, Integer> frequencyOfValues = new HashMap<>();
     for (Card c: hand){
-      int value = Util.interpretValue(c.getValue());
+      int value = Util.getValue(c.getRank());
       if (frequencyOfValues.containsKey(value)){
         int frequency = frequencyOfValues.get(value);
         frequencyOfValues.put(value, frequency + 1);

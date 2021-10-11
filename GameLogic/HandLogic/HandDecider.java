@@ -44,8 +44,8 @@ public class HandDecider {
     HashMap<Integer, Integer> frequenciesOfValues = new HashMap<>();
 
     for (Card c: hand){
-      suits.add(c.getCardSuit());
-      int value = c.getValue();
+      suits.add(c.getSuit());
+      int value = Util.getValue(c.getRank());
       values.add(value);
       if (frequenciesOfValues.containsKey(value)){
         int currentAmountOfTimes = frequenciesOfValues.get(value);
@@ -168,7 +168,7 @@ public class HandDecider {
 
       for (int i = lowestValue + 1; i < lowestValue + HAND_SIZE; i++){
         if (!values.contains(i))
-          return false;
+          return lowestValue == Util.TWO && i - 1 == Util.FIVE && values.contains(Util.ACE_HIGH);
       }
       return true;
   }
@@ -179,6 +179,6 @@ public class HandDecider {
       if (!values.contains(i))
         return false;
     }
-    return values.contains(Util.ACE);
+    return values.contains(Util.ACE_HIGH);
   }
 }
