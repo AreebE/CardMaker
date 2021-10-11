@@ -147,4 +147,15 @@ public class Util {
     }
   }
 
+  public static void reverseArray(Object[] values){
+    for (int i = 0; i < values.length / 2; i++){
+      Object holder = values[i];
+      values[i] = values[values.length - 1];
+      values[values.length - 1] = holder;
+    }
+  }
+  
+
+  public static final String EMPTY_SPACE = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+
 }
