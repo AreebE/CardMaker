@@ -17,8 +17,6 @@ public class Deck {
     for (int i = 0; i < 52; i++) {
       deck.add(new Card(Util.getRank(i % 13 + 1), Util.getSuit(i / 13)));
     }
-    
-
       //System.out.println(Arrays.toString(deck));
     //re-arranges the deck 
     for (int j = 0; j < 100; j++) {
