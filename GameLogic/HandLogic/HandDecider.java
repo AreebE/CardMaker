@@ -174,11 +174,10 @@ public class HandDecider {
   }
 
   private boolean hasRoyals(HashSet<Integer> values){
-
     for (int i = Util.TEN; i <= Util.KING; i++){
       if (!values.contains(i))
         return false;
     }
-    return values.contains(Util.ACE_HIGH);
+    return values.contains(Util.getValue(Util.Rank.ACE));
   }
 }

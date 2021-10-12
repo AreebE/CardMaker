@@ -24,11 +24,11 @@ public class FullHouse extends Hand {
     Iterator<Integer> keys = frequencyOfValues.keySet().iterator();
     int key = keys.next();
     if (frequencyOfValues.get(key) == 3)
-      return Util.translateValueToChar(key) + "" + 
-          Util.translateValueToChar(keys.next());
+      return Util.getChar(key) + "" + 
+          Util.getChar(keys.next());
     else 
-      return Util.translateValueToChar(keys.next()) + "" + 
-          Util.translateValueToChar(key); 
+      return Util.getChar(keys.next()) + "" + 
+          Util.getChar(key); 
   }
   
 }

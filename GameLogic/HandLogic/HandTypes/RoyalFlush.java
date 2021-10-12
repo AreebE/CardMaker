@@ -6,7 +6,7 @@ public class RoyalFlush extends Hand {
 
   @Override
   protected String createString(Card[] hand){ 
-    return "" + Util.getValue(Util.Rank.ACE);
+    return "" + Util.getChar(Util.ACE);
   }
   
 }

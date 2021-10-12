@@ -24,11 +24,11 @@ public class FourOfAKind extends Hand {
     Iterator<Integer> keys = frequencyOfValues.keySet().iterator();
     int k = keys.next();
     if (frequencyOfValues.get(k) == 4)
-      return Util.translateValueToChar(k) + "" + 
-          Util.translateValueToChar(keys.next());
+      return Util.getChar(k) + "" + 
+          Util.getChar(keys.next());
     else 
-      return Util.translateValueToChar(keys.next()) + "" + 
-          Util.translateValueToChar(k); 
+      return Util.getChar(keys.next()) + "" + 
+          Util.getChar(k); 
 
   }
   

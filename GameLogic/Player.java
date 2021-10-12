@@ -7,7 +7,7 @@ public class Player implements Comparable<Player>{
   private String name;
   private boolean folded;
   private boolean called;
-  private Card cardGiven;
+  private Card[] cards;
 
   public Player(int startingChips, String name){
     this.chips = startingChips;
@@ -15,6 +15,7 @@ public class Player implements Comparable<Player>{
     this.name = name;
     this.folded = false;
     this.called = false;
+    this.cards = new Card[2];
   }
 
   /*
@@ -23,14 +24,14 @@ public class Player implements Comparable<Player>{
    * @param c   the other card 
   */
   public void setCard(Card c){
-    this.cardGiven = c;
+    this.cards[0] = c;
   }
 
   /*
    * @return the card the player has
   */
   public Card getCard(){
-    return cardGiven;
+    return cards[0];
   }
 
   /*
@@ -89,7 +90,7 @@ public class Player implements Comparable<Player>{
 
   public int compareTwoCards(Player other){
     Card otherCard = other.getCard();
-    return cardGiven.compareTo(otherCard);
+    return cards[0].compareTo(otherCard);
   }
 
   public void startNewRound(){

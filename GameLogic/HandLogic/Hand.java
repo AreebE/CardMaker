@@ -23,8 +23,8 @@ abstract public class Hand implements Comparable<Hand>{
   public int compareToSameTypeHand(Hand other){
     String otherSetOfCards = other.getCardsToCompare();
     for (int i = 0; i < cardsToCompare.length(); i++){
-      int thisCardValue = Util.decipherCardValue(cardsToCompare.charAt(i));
-      int otherCardValue = Util.decipherCardValue(otherSetOfCards.charAt(i));
+      int thisCardValue = Util.getValue(cardsToCompare.charAt(i));
+      int otherCardValue = Util.getValue(otherSetOfCards.charAt(i));
       if (thisCardValue != otherCardValue){
         return thisCardValue - otherCardValue;
       }

@@ -17,8 +17,8 @@ public class StraightFlush extends Hand {
     }
     
     if (bestValue == Util.getValue(Util.Rank.ACE) && containsFive){
-      return Util.getValue(Util.Rank.FIVE) + "";
+      return Util.getChar(Util.FIVE) + "";
     }
-    return Util.translateValueToChar(bestValue) + "";
+    return Util.getChar(bestValue) + "";
   }
 }

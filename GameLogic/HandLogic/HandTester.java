@@ -337,7 +337,7 @@ public class HandTester {
     
 
    
-   
+   /**/
     Hand rflush1 = maker.getHand(royalFlush1);
     Hand rflush2 = maker.getHand(royalFlush2);
     Hand sflush1 = maker.getHand(straightFlush1);
@@ -419,7 +419,7 @@ public class HandTester {
     testSorting.add(one4);
     testSorting.add(high4);  
     testSorting.add(f4);  
-
+    /**/
     // System.out.println(Hand.timesCalled);
     Collections.sort(testSorting);
     // System.out.println(hand[0]);

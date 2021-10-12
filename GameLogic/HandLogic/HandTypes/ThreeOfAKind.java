@@ -37,7 +37,7 @@ public class ThreeOfAKind extends Hand {
     Util.sort(orderedCards, 1);
     String orderOfCards = "";
     for (int card: orderedCards){
-      orderOfCards += Util.translateValueToChar(card);
+      orderOfCards += Util.getChar(card);
     }
     return orderOfCards;
   }
