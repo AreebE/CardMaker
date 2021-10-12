@@ -19,6 +19,15 @@ public class Player implements Comparable<Player>{
   }
 
   /*
+   * This resets all of the current conditions of the player,
+   * for when a new round starts
+  */
+  public void startNewRound(){
+    this.called = false;
+    this.folded = chips == 0;
+    betChips = 0;
+  }
+  /*
    * This sets the card the player has.
    *
    * @param c   the other card 
@@ -93,10 +102,8 @@ public class Player implements Comparable<Player>{
     return cards[0].compareTo(otherCard);
   }
 
-  public void startNewRound(){
-    this.called = false;
-    this.folded = chips == 0;
-    betChips = 0;
+  public int compareHands(Player other){
+
   }
 
   @Override

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Blueprint {
 
   // These constants are used to create the blueprints
-  public final static int BLOCK_SIZE = 10;
+  public final static int BLOCK_SIZE = Util.BLOCK_SIZE;
   private final static int LEFT = 3;
   private final static int STANDARD_SIZE = 3;
   private final static int RIGHT = 9;

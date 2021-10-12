@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class CardDrawer {
 
-  private static int BLOCK_SIZE = Blueprint.BLOCK_SIZE;
+  private static int BLOCK_SIZE = Util.BLOCK_SIZE;
  /*
    * This method will draw this card, using some helper methods. After getting the
    * appropiate artist for the given suit and translating the origin, it will go
@@ -68,7 +68,8 @@ public class CardDrawer {
    * corners of each card. It uses two types of font, 
    * one normal and one reversed, to draw the letters 
    * at each corner. Afterwards, it draws a symbol in 
-   * each corner, which is normal in the upper left and * reversed in the lower right, just like the letters
+   * each corner, which is normal in the upper left and 
+   * reversed in the lower right, just like the letters
    * 
    * @param   canvas    Where the card was drawn 
    * 

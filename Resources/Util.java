@@ -5,6 +5,8 @@ public class Util {
     SPADES, DIAMONDS, HEARTS, CLUBS
   }
   
+  public static final int BLOCK_SIZE = 10;
+
   public static final int CARDS_ON_TABLE = 7;
   
   public static final int ROYAL_FLUSH = 10;
