@@ -1,8 +1,7 @@
 This is intended to act as a sort of chapter index, describing what is in each folder.
 ====
-
-Game Logic 
---
+Game Logic
+--- 
 Anything that would fall under making some logical decision, such as making a turn or deciding whose's hand is the best.
 
 - Card: A class for a single card
@@ -42,7 +41,7 @@ This contains logic for deciding not only which hand was best, but what type of 
 - HandTester: This class is not used by the game - It is just used to test if HandDecider and all of the handtypes work.
 ---
 HandTypes (in HandLogic)
-=
+-
 This folder contains all of the different hand types. Here are the conditions of each handtype in order:
 - Royal Flush: All cards are of the same suit and contains a Ace, Ten, King, Queen, and Jack 
 - Straight Flush: All cards are of the same suit and in consecutive order 
@@ -56,11 +55,37 @@ This folder contains all of the different hand types. Here are the conditions of
 - Highest Card: It uses the card with the highest value.
 ---
 Graphics
-==
+-
+This includes any type of classes that have anything to do with drawing.
+- CardDrawer: This will draw a card at a starting position. It also is able to scale the card's size
 
+
+- DrawingPanel: This class is imported and is used for contain the canvas.
+
+
+- Blueprint: This class is used to determine where the symbols go, based on a card's rank.
+---
+FaceDrawers (Inside Graphics)
+-
+
+This class is used to draw the symbols representing a specific suit, along with being able to draw cards with a rank of King, Queen, or Jack.
+
+- CardFaceDrawer: This class is abstract and meant to be extended. It is used for drawing the symbols of a card or the face cards (King, Queen, and Jack)
+
+
+- Club: This is responsible for drawing club symbols.
+
+
+- Diamond: This is responsible for drawing diamond symbols.
+
+
+- Heart: This is responsible for drawing heart symbols.
+
+
+- Spade: This is responsible for drawing spade symbols.
 ---
 Resources
-==
+-
 This folder contains some general resources used by a lot of classes.
 - README: The name of this file, not much to it.
 - Util: A file containing some constants and helper methods (ex. sorting an array)
