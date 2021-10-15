@@ -55,9 +55,9 @@ class Main {
       // System.out.println(i);
     // }
 
-    HandTester.testMethods();
+    // HandTester.testMethods();
 
-    // new Game();
+    new Game();
 
     // System.out.println("reach end");
   }

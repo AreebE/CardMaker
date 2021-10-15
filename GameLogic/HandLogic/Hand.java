@@ -44,7 +44,11 @@ abstract public class Hand implements Comparable<Hand>{
 
   @Override
   public String toString(){
-    return Arrays.toString(cardsInHand) + " || " + getClass() + " || " + cardsToCompare;
+    String returnValue = "";
+    for (Card c: cardsInHand){
+      returnValue += "* " + c.toString() + "\n";
+    }
+    return returnValue;
   } 
 
   protected abstract String createString(Card[] hand);

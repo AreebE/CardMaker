@@ -98,7 +98,9 @@ This is intended to act as a sort of chapter index, describing what is in each f
 - Util: A file containing some constants and helper methods (ex. sorting an array)
 ---
 # To do:
-- RoundGraphics is currently not done, so that needs to be finished
-- While the Round class does work for comparing single cards, it currently cannot compare hands.
-  - Likewise, the player class currently can't return two cards.
+- [ ] RoundGraphics is currently not done, so that needs to be finished
+
+- [ ] While the Round class does work for comparing single cards, it currently cannot compare hands.
+  
+- [ ] Likewise, the player class currently can't return two cards.
   

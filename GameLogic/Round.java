@@ -5,6 +5,11 @@ import java.util.Iterator;
 
 public class Round {
   private final static int FIRST_BLIND = 1;
+
+  private final static int CARDS_IN_FIRST_PHASE = 0;
+  private final static int CARDS_IN_SECOND_PHASE = 3;
+  private final static int CARDS_IN_THIRD_PHASE = 4;
+  private final static int CARDS_IN_FOURTH_PHASE = 5;
   private String questionForAction = "Do you plan to raise 1, raise 2, call, or fold?";
 
   private final static int TIMES_TO_SHUFFLE = 10;
@@ -13,9 +18,11 @@ public class Round {
   private final static int CALL = 0;
   private final static int FOLD = 3;
   private final static int INVALID_INPUT = -1;
+  
   private int pot;
   private int calledPlayers;
   private int foldedPlayers;
+  private Card[] cardsOnTable;
 
   private static HashMap<String, Integer> acceptableRaisingInput = new HashMap<>() {
     {
@@ -62,20 +69,38 @@ public class Round {
     foldedPlayers = 0;
     Deck d = new Deck();
     // d.randomizeDeck(TIMES_TO_SHUFFLE);
+    cardsOnTable = new Card[5];
     for (Player p : players) {
-      p.setCard(d.drawCard());
-      if (p.hasCalled()){
-        calledPlayers++;
+      p.setCards(d.drawCard(), d.drawCard());
+      if (p.getChips() == 0){
+        p.setFolded(true);
       }
       if (p.hasFolded()){
         foldedPlayers++;
       }
-      p.startNewRound();
     }
-    startRound(inputReader, players);
+    for (int i = 0; i < cardsOnTable.length; i++){
+      cardsOnTable[i] = d.drawCard();
+    }
+    startRound(inputReader, players, CARDS_IN_FIRST_PHASE);
+    startRound(inputReader, players, CARDS_IN_SECOND_PHASE);
+    startRound(inputReader, players, CARDS_IN_THIRD_PHASE);
+    startRound(inputReader, players, CARDS_IN_FOURTH_PHASE);
     endRound(players);
   }
 
+  private void resetPlayers(Player[] players){
+    calledPlayers = 0;
+    for (Player p : players) {
+      if (p.hasCalled()){
+        p.setCalled(false);
+      }
+      if (p.getChips() == 0 && !p.has){
+        p.setFolded(true);
+      }
+      p.startNewRound();
+    }
+  }
   /*
    * This method will cause the round to start. How each round starts:
    * There is a 'first blind,' forcing the first player to bet at least one chip.
@@ -102,8 +127,9 @@ public class Round {
    *
    * @param   players   All players in the game
   */
-  private void startRound(Scanner inputReader, Player[] players) {
+  private void startRound(Scanner inputReader, Player[] players, int cardsInPhase) {
     int previousBet = FIRST_BLIND;
+    resetPlayers(players);
     for (int i = 0; calledPlayers + foldedPlayers < players.length && foldedPlayers < players.length - 1; i = (i + 1) % players.length) {
       Player p = players[i];
       System.out.println(Util.EMPTY_SPACE);
@@ -117,7 +143,7 @@ public class Round {
         System.out.println("Confirm that this is " + p.getName() + "\'s turn.");
         
         inputReader.next();
-        showInfo(players, p, previousBet, pot);
+        showInfo(players, p, previousBet, pot, cardsInPhase, cardsOnTable);
         System.out.println(questionForAction);
         
         String input = inputReader.next();
@@ -235,7 +261,7 @@ public class Round {
     int tokensWon = pot / winners.size();
     for (int i = 0; i < winners.size(); i++) {
       Player p = winners.get(i);
-      System.out.println(p.getName() + " (had the " + p.getCard() + ".)");
+      System.out.println(p.getName() + " (had the " + p.getCard(0) + ".)");
       p.gainChips(tokensWon);
     }
   }
@@ -304,14 +330,21 @@ public class Round {
    * @param   previousBet     The previous bet 
    * @param   pot             The current pot
   */
-  private static void showInfo(Player[] allPlayers, Player current, int previousBet, int pot) {
+  private static void showInfo(Player[] allPlayers, Player current, int previousBet, int pot, int cardsInPhase, Card[] cardsOnTable) {
     System.out.println("\n" + current.getName() + "'s turn.");
     System.out.println("You currently have " + current.getChips() + " chips.");
-    System.out.println("You currently have the " + current.getCard());
+    System.out.println("You currently have: \n* " +  current.getCard(0) + "\n* " + current.getCard(1) + "\n");
 
     System.out.println("The pot currently has " + pot + ((pot == 1) ? " chip" : " chips")
             + "\nand the previous bet is currently " + previousBet + ". ");
 
+    if (cardsInPhase != CARDS_IN_FIRST_PHASE){
+      System.out.println("The cards on the table are: ");
+      for (int i = 0; i < cardsInPhase; i++){
+        System.out.println("* " + cardsOnTable[i]);
+      }
+    }
+    
     System.out.println("As for the other players:");
     for (Player p: allPlayers){
       if (p != current && !p.hasFolded()){

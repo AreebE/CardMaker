@@ -8,6 +8,7 @@ public class Player implements Comparable<Player>{
   private boolean folded;
   private boolean called;
   private Card[] cards;
+  private Hand bestHand;
 
   public Player(int startingChips, String name){
     this.chips = startingChips;
@@ -16,6 +17,7 @@ public class Player implements Comparable<Player>{
     this.folded = false;
     this.called = false;
     this.cards = new Card[2];
+    this.bestHand = null;
   }
 
   /*
@@ -25,22 +27,24 @@ public class Player implements Comparable<Player>{
   public void startNewRound(){
     this.called = false;
     this.folded = chips == 0;
-    betChips = 0;
+    this.bestHand = null;
+    this.betChips = 0;
   }
   /*
    * This sets the card the player has.
    *
    * @param c   the other card 
   */
-  public void setCard(Card c){
-    this.cards[0] = c;
+  public void setCards(Card first, Card second){
+    this.cards[0] = first;
+    this.cards[1] = second;
   }
 
   /*
    * @return the card the player has
   */
-  public Card getCard(){
-    return cards[0];
+  public Card getCard(int index){
+    return cards[index];
   }
 
   /*
@@ -77,6 +81,14 @@ public class Player implements Comparable<Player>{
     return chips;
   }
 
+  public void setBestHand(Hand bestHand){
+    this.bestHand = bestHand;
+  }
+
+  public Hand getBestHand(){
+    return bestHand;
+  }
+
   public String getName(){
     return name;
   }
@@ -98,12 +110,13 @@ public class Player implements Comparable<Player>{
   }
 
   public int compareTwoCards(Player other){
-    Card otherCard = other.getCard();
+    Card otherCard = other.getCard(0);
     return cards[0].compareTo(otherCard);
   }
 
   public int compareHands(Player other){
-
+    Hand otherBest = other.getBestHand();
+    return this.bestHand.compareTo(otherBest);
   }
 
   @Override
