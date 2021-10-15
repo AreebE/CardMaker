@@ -1,8 +1,8 @@
 This is intended to act as a sort of chapter index, describing what is in each folder.
-====
-Game Logic
---- 
-Anything that would fall under making some logical decision, such as making a turn or deciding whose's hand is the best.
+
+---
+# Game Logic
+> Anything that would fall under making some logical decision, such as making a turn or deciding whose's hand is the best.
 
 - Card: A class for a single card
 
@@ -28,9 +28,8 @@ Anything that would fall under making some logical decision, such as making a tu
 - TooManyChipsBet: This specific exception is designed to be thrown if too many chips are bet.
 ---
 
-HandLogic (Inside GameLogic)
---
-This contains logic for deciding not only which hand was best, but what type of hand a set of cards were.
+# HandLogic (Inside GameLogic)
+> This contains logic for deciding not only which hand was best, but what type of hand a set of cards were.
 
 - Hand: An abstract class meant to be overrided by other classes. Overall, this class serves the function of storing cards of a given hand and comparing two hands, whether they are alike or not.
 
@@ -40,9 +39,9 @@ This contains logic for deciding not only which hand was best, but what type of 
 
 - HandTester: This class is not used by the game - It is just used to test if HandDecider and all of the handtypes work.
 ---
-HandTypes (in HandLogic)
--
-This folder contains all of the different hand types. Here are the conditions of each handtype in order:
+# HandTypes (in HandLogic)
+> This folder contains all of the different hand types. Here are the conditions of each handtype in order, from highest to lowest:
+
 - Royal Flush: All cards are of the same suit and contains a Ace, Ten, King, Queen, and Jack 
 - Straight Flush: All cards are of the same suit and in consecutive order 
 - Four of a Kind: Four cards of the same number are present
@@ -54,9 +53,10 @@ This folder contains all of the different hand types. Here are the conditions of
 - One Pair: There is only one pair of cards.
 - Highest Card: It uses the card with the highest value.
 ---
-Graphics
--
-This includes any type of classes that have anything to do with drawing.
+
+# Graphics
+> This includes any type of classes that have anything to do with drawing.
+
 - CardDrawer: This will draw a card at a starting position. It also is able to scale the card's size
 
 
@@ -64,11 +64,18 @@ This includes any type of classes that have anything to do with drawing.
 
 
 - Blueprint: This class is used to determine where the symbols go, based on a card's rank.
----
-FaceDrawers (Inside Graphics)
--
 
-This class is used to draw the symbols representing a specific suit, along with being able to draw cards with a rank of King, Queen, or Jack.
+
+- RoundGraphics: This class is used to draw all components of a round, such as:
+  - The pot 
+  - The current player's cards 
+  - The board itself
+  - The previous bet 
+  - The cards that should be on the board
+  - The winning hands (at the end of a round)
+---
+# FaceDrawers (Inside Graphics)
+> This class is used to draw the symbols representing a specific suit, along with being able to draw cards with a rank of King, Queen, or Jack.
 
 - CardFaceDrawer: This class is abstract and meant to be extended. It is used for drawing the symbols of a card or the face cards (King, Queen, and Jack)
 
@@ -84,11 +91,14 @@ This class is used to draw the symbols representing a specific suit, along with 
 
 - Spade: This is responsible for drawing spade symbols.
 ---
-Resources
--
-This folder contains some general resources used by a lot of classes.
+#Resources
+>This folder contains some general resources used by a lot of classes.
+
 - README: The name of this file, not much to it.
 - Util: A file containing some constants and helper methods (ex. sorting an array)
 ---
-To do:
-==
+# To do:
+- RoundGraphics is currently not done, so that needs to be finished
+- While the Round class does work for comparing single cards, it currently cannot compare hands.
+  - Likewise, the player class currently can't return two cards.
+  
