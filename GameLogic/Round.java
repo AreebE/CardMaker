@@ -95,9 +95,6 @@ public class Round {
       if (p.hasCalled()){
         p.setCalled(false);
       }
-      if (p.getChips() == 0 && !p.has){
-        p.setFolded(true);
-      }
       p.startNewRound();
     }
   }
