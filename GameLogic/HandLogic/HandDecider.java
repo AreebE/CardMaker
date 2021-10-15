@@ -8,7 +8,7 @@ public class HandDecider {
   
   private static final int HAND_SIZE = 5;
 
-  public Hand getBestHand(Card[] cardsOnTable){
+  public static Hand getBestHand(Card[] cardsOnTable){
     HashSet<Card> currentCards = new HashSet<>(); 
     for (int i = 1; i <= Util.HAND_SIZE; i++){
       currentCards.add(cardsOnTable[Util.CARDS_ON_TABLE - i]);
@@ -38,7 +38,7 @@ public class HandDecider {
   }
 
     
-  public Hand getHand(Card[] hand){
+  public static Hand getHand(Card[] hand){
     HashSet<Util.Suit> suits = new HashSet<>();
     HashSet<Integer> values = new HashSet<>();
     HashMap<Integer, Integer> frequenciesOfValues = new HashMap<>();
@@ -72,7 +72,7 @@ public class HandDecider {
 
   /*
   */
-  private int getHandType(HashSet<Util.Suit> suits, HashSet<Integer> values, int[] frequencies){
+  private static int getHandType(HashSet<Util.Suit> suits, HashSet<Integer> values, int[] frequencies){
     if (isRoyalFlush(suits, values)) 
       return Util.ROYAL_FLUSH;
     else if (isStraightFlush(suits, values)) 
@@ -94,7 +94,7 @@ public class HandDecider {
     return Util.HIGH_CARD;
   }
 
-  private Hand createHand(int type, Card[] hand){
+  private static Hand createHand(int type, Card[] hand){
     switch (type){
       case Util.ROYAL_FLUSH:
         return new RoyalFlush(hand);
@@ -120,49 +120,49 @@ public class HandDecider {
 
   }
 
-  public boolean isRoyalFlush(HashSet<Util.Suit> suits, HashSet<Integer> values){
+  private static boolean isRoyalFlush(HashSet<Util.Suit> suits, HashSet<Integer> values){
     if (suits.size() == 1 && values.size() == HAND_SIZE){
       return hasRoyals(values);
     }
     return false;
   }
 
-  public boolean isStraightFlush(HashSet<Util.Suit> suits, HashSet<Integer> values){
+  private static boolean isStraightFlush(HashSet<Util.Suit> suits, HashSet<Integer> values){
     if (suits.size() == 1 && values.size() == HAND_SIZE){
       return hasConsecutive(values);
     }
     return false;
   }
 
-  public boolean isFourOfAKind(int[] frequencies){
+  private static boolean isFourOfAKind(int[] frequencies){
     return frequencies[4] == 1;
   }
 
-  public boolean isFullHouse(int[] frequencies){
+  private static boolean isFullHouse(int[] frequencies){
     return frequencies[3] == 1 && frequencies[2] == 1;
   }
 
-  public boolean isFlush(HashSet<Util.Suit> suits){
+  private static boolean isFlush(HashSet<Util.Suit> suits){
     return suits.size() == 1;
   }
 
-  public boolean isStraight(HashSet<Integer> values){
+  private static boolean isStraight(HashSet<Integer> values){
     return hasRoyals(values) || hasConsecutive(values);
   }
 
-  public boolean isThreeOfAKind(int[] frequencies){
+  private static boolean isThreeOfAKind(int[] frequencies){
     return frequencies[3] == 1;  
   }
 
-  public boolean isTwoPair(int[] frequencies){
+  private static boolean isTwoPair(int[] frequencies){
     return frequencies[2] == 2; 
   }
 
-  public boolean isOnePair(int[] frequencies){
+  private static boolean isOnePair(int[] frequencies){
     return frequencies[2] == 1;
   }
 
-  private boolean hasConsecutive(HashSet<Integer> values){
+  private static boolean hasConsecutive(HashSet<Integer> values){
     int lowestValue = Util.ACE;
       while (!values.contains(lowestValue)) lowestValue++;
 
@@ -173,7 +173,7 @@ public class HandDecider {
       return true;
   }
 
-  private boolean hasRoyals(HashSet<Integer> values){
+  private static boolean hasRoyals(HashSet<Integer> values){
     for (int i = Util.TEN; i <= Util.KING; i++){
       if (!values.contains(i))
         return false;

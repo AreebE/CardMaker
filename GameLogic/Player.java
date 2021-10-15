@@ -109,11 +109,6 @@ public class Player implements Comparable<Player>{
     return called;
   }
 
-  public int compareTwoCards(Player other){
-    Card otherCard = other.getCard(0);
-    return cards[0].compareTo(otherCard);
-  }
-
   public int compareHands(Player other){
     Hand otherBest = other.getBestHand();
     return this.bestHand.compareTo(otherBest);

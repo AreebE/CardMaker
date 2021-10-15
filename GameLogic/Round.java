@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.HashSet;
 
 public class Round {
   private final static int FIRST_BLIND = 1;
@@ -223,17 +224,35 @@ public class Round {
    * @param   players   All players playing
   */
   private void endRound(Player[] players) {
+    ArrayList<Player> winners = findBestPlayers(players);
+    // System.out.println(winners);
+    displayWinners(winners);
+  }
+
+  private ArrayList<Player> findBestPlayers(Player[] players){
     ArrayList<Player> winners = new ArrayList<>();
     int i = 0;
+    Card[] setOfSevenCards = new Card[7];
+    for (int j = 0; j < 5; j++){
+      setOfSevenCards[j] = cardsOnTable[j];
+    }
     while (i < players.length && players[i].hasFolded()) {
       i++;
     }
     Player bestPlayer = players[i];
+    
+    setOfSevenCards[5] = bestPlayer.getCard(0);
+    setOfSevenCards[6] = bestPlayer.getCard(1);
+    bestPlayer.setBestHand(HandDecider.getBestHand(setOfSevenCards));
+    
     winners.add(bestPlayer);
     for (i = i + 1; i < players.length; i++) {
       Player current = players[i];
+      setOfSevenCards[5] = current.getCard(0);
+      setOfSevenCards[6] = current.getCard(1);
       if (!current.hasFolded()) {
-        int difference = bestPlayer.compareTwoCards(current);
+        current.setBestHand(HandDecider.getBestHand(setOfSevenCards));
+        int difference = bestPlayer.compareHands(current);
         if (difference == 0) {
           winners.add(current);
         } else if (difference < 0) {
@@ -243,8 +262,7 @@ public class Round {
         }
       }
     }
-    // System.out.println(winners);
-    displayWinners(winners);
+    return winners;
   }
 
   /*
@@ -258,7 +276,7 @@ public class Round {
     int tokensWon = pot / winners.size();
     for (int i = 0; i < winners.size(); i++) {
       Player p = winners.get(i);
-      System.out.println(p.getName() + " (had the " + p.getCard(0) + ".)");
+      System.out.println(p.getName() + " who had:\n" + p.getBestHand());
       p.gainChips(tokensWon);
     }
   }
@@ -350,6 +368,10 @@ public class Round {
     }
 
     System.out.println("\nYou have currently bet " + current.getBetChips() + " chips.");
+  }
+
+  public Card[] getCardsOnTable(){
+    return cardsOnTable;
   }
   
 }
