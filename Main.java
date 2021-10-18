@@ -31,6 +31,7 @@ class Main {
     drawingPanel.setBackground(Color.GRAY);
     Scanner text = new Scanner(System.in);
     Graphics2D canvas = drawingPanel.getGraphics();
+    RoundGraphics.drawRound(drawingPanel, canvas);
     // canvas.translate(50, 50);
     // canvas.rotate(Math.PI / 4);
     Deck deck = new Deck();
