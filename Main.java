@@ -27,11 +27,8 @@ import java.util.HashSet;
 class Main {
   public static void main(String[] args) {
     // System.out.println("Hello world!");
-    DrawingPanel drawingPanel = new DrawingPanel(1000, 800);
-    drawingPanel.setBackground(Color.GRAY);
     Scanner text = new Scanner(System.in);
-    Graphics2D canvas = drawingPanel.getGraphics();
-    RoundGraphics.drawRound(drawingPanel, canvas);
+   // RoundGraphics.drawRound();
     // canvas.translate(50, 50);
     // canvas.rotate(Math.PI / 4);
     Deck deck = new Deck();

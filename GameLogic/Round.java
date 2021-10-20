@@ -359,6 +359,8 @@ public class Round {
         System.out.println("* " + cardsOnTable[i]);
       }
     }
+
+    RoundGraphics.drawRound(current.getCard(1));
     
     System.out.println("As for the other players:");
     for (Player p: allPlayers){
