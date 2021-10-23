@@ -360,7 +360,7 @@ public class Round {
       }
     }
 
-    RoundGraphics.drawRound(current.getCard(1));
+    RoundGraphics.drawRound(current.getCard(0), current.getCard(1), true, pot, cardsInPhase, cardsOnTable);
     
     System.out.println("As for the other players:");
     for (Player p: allPlayers){
@@ -370,6 +370,7 @@ public class Round {
     }
 
     System.out.println("\nYou have currently bet " + current.getBetChips() + " chips.");
+
   }
 
   public Card[] getCardsOnTable(){
