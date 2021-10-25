@@ -5,19 +5,22 @@ import java.awt.Font;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
+
 public class RoundGraphics {
   public static DrawingPanel dp = new DrawingPanel(650, 450);
   public static void drawRound(Card a, Card b, boolean confirmed, int pot, int currentCards, Card[] cardsOnTable){
+    
     Graphics2D canvas = dp.getGraphics();
     Color customColor = new Color(0,102,0);
     dp.setBackground(customColor);
+    AffineTransform oldConditions = canvas.getTransform();
       if(confirmed == true){
       drawsPlayerHand(canvas, a, b, pot, currentCards, cardsOnTable);
       }
       else{
       drawsFullTable();
       }
-    
+    canvas.setTransform(oldConditions);
   }
 
   public static void drawsFullTable(){
@@ -67,13 +70,78 @@ public class RoundGraphics {
       }
     }
     else if(currentCards == 3){
-
+      canvas.setColor(Color.WHITE);
+      canvas.fillRect(140, 10, 80, 110);
+      canvas.fillRect(240, 10, 80, 110);
+      canvas.fillRect(340, 10, 80, 110);
+      canvas.setColor(Color.BLUE);
+      canvas.fillRect(440, 10, 80, 110);
+      canvas.fillRect(540, 10, 80, 110);
+      canvas.translate(160, 60);
+      drawsSuit(canvas, suite1);
+      canvas.translate(100, 0);
+      drawsSuit(canvas, suite2);
+      canvas.translate(100, 0);
+      drawsSuit(canvas, suite3);
+      
     }
     else if(currentCards == 4){
-
+      canvas.setColor(Color.WHITE);
+      canvas.fillRect(140, 10, 80, 110);
+      canvas.fillRect(240, 10, 80, 110);
+      canvas.fillRect(340, 10, 80, 110);
+      canvas.fillRect(440, 10, 80, 110);
+      canvas.setColor(Color.BLUE);
+      canvas.fillRect(540, 10, 80, 110);
+       
+      canvas.translate(160, 60);
+      drawsSuit(canvas, suite1);
+      canvas.translate(100, 0);
+      drawsSuit(canvas, suite2);
+      canvas.translate(100, 0);
+      drawsSuit(canvas, suite3);
+      canvas.translate(100, 0);
+      drawsSuit(canvas, suite4);
     }
     else{
-      
+      canvas.setColor(Color.WHITE);
+      canvas.fillRect(140, 10, 80, 110);
+      canvas.fillRect(240, 10, 80, 110);
+      canvas.fillRect(340, 10, 80, 110);
+      canvas.fillRect(440, 10, 80, 110);
+      canvas.fillRect(540, 10, 80, 110);
+       
+      canvas.translate(160, 60);
+      drawsSuit(canvas, suite1);
+      canvas.translate(100, 0);
+      drawsSuit(canvas, suite2);
+      canvas.translate(100, 0);
+      drawsSuit(canvas, suite3);
+      canvas.translate(100, 0);
+      drawsSuit(canvas, suite4);
+      canvas.translate(100, 0);
+      drawsSuit(canvas, suite5);
+    }
+    
+  }
+
+  public static void drawsSuit(Graphics2D canvas, Util.Suit suite){
+    String suit = suite.toString();
+    if(suit == "SPADES"){
+      Spade sp = new Spade();
+      sp.drawSymbol(canvas, 40);
+    }
+    else if(suit == "HEARTS"){
+      Heart h = new Heart();
+      h.drawSymbol(canvas, 40);
+    }
+    else if(suit == "CLUBS"){
+      Club c = new Club();
+      c.drawSymbol(canvas, 40); 
+    }
+    else{
+      Diamond d = new Diamond();
+      d.drawSymbol(canvas, 40);
     }
   }
 
