@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
+//TODO- rotate text and optimatze
 
 public class RoundGraphics {
   public static DrawingPanel dp = new DrawingPanel(650, 450);
@@ -41,7 +42,6 @@ public class RoundGraphics {
 
     drawsCardsOnTable(canvas, currentCards, cardsOnTable);
     
-    //right now pot num is overlaping
   }
 
   public static void drawsCardsOnTable(Graphics2D canvas, int currentCards, Card[] cardsOnTable){
@@ -60,6 +60,8 @@ public class RoundGraphics {
     String card4 = Integer.toString(Util.getValue(cardsOnTable[3].getRank()));
     String card5 =  Integer.toString(Util.getValue(cardsOnTable[4].getRank()));
 
+    AffineTransform oldConditions = canvas.getTransform();
+
     if(currentCards == 0){
       for(int i = 0; i < 5; i++){
         canvas.fillRect(140, 10, 80, 110);
@@ -71,12 +73,18 @@ public class RoundGraphics {
     }
     else if(currentCards == 3){
       canvas.setColor(Color.WHITE);
-      canvas.fillRect(140, 10, 80, 110);
+      canvas.fillRect(140, 10, 80, 110);   
       canvas.fillRect(240, 10, 80, 110);
       canvas.fillRect(340, 10, 80, 110);
       canvas.setColor(Color.BLUE);
       canvas.fillRect(440, 10, 80, 110);
       canvas.fillRect(540, 10, 80, 110);
+
+      canvas.setColor(Color.BLACK);
+      canvas.drawString(card1 , 180, 25);
+      canvas.drawString(card2, 280, 25);
+      canvas.drawString(card3, 380, 25);
+
       canvas.translate(160, 60);
       drawsSuit(canvas, suite1);
       canvas.translate(100, 0);
@@ -93,6 +101,12 @@ public class RoundGraphics {
       canvas.fillRect(440, 10, 80, 110);
       canvas.setColor(Color.BLUE);
       canvas.fillRect(540, 10, 80, 110);
+
+      canvas.setColor(Color.BLACK);
+      canvas.drawString(card1 , 180, 25);
+      canvas.drawString(card2, 280, 25);
+      canvas.drawString(card3, 380, 25);
+      canvas.drawString(card4, 480, 25);
        
       canvas.translate(160, 60);
       drawsSuit(canvas, suite1);
@@ -110,6 +124,13 @@ public class RoundGraphics {
       canvas.fillRect(340, 10, 80, 110);
       canvas.fillRect(440, 10, 80, 110);
       canvas.fillRect(540, 10, 80, 110);
+
+      canvas.setColor(Color.BLACK);
+      canvas.drawString(card1 , 180, 25);
+      canvas.drawString(card2, 280, 25);
+      canvas.drawString(card3, 380, 25);
+      canvas.drawString(card4, 480, 25);
+      canvas.drawString(card5, 580, 25);
        
       canvas.translate(160, 60);
       drawsSuit(canvas, suite1);
