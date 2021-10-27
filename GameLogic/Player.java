@@ -20,13 +20,17 @@ public class Player implements Comparable<Player>{
     this.bestHand = null;
   }
 
+
+  public void startNewRound(){
+    this.folded = chips == 0;
+    startNewPhase();
+  }
   /*
    * This resets all of the current conditions of the player,
    * for when a new round starts
   */
-  public void startNewRound(){
+  public void startNewPhase(){
     this.called = false;
-    this.folded = chips == 0;
     this.bestHand = null;
     this.betChips = 0;
   }
