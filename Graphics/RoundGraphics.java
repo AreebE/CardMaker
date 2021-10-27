@@ -45,105 +45,38 @@ public class RoundGraphics {
   }
 
   public static void drawsCardsOnTable(Graphics2D canvas, int currentCards, Card[] cardsOnTable){
-    String[] cards = new String[5];
-    canvas.setColor(Color.BLUE);
+    String[] cardsNums = new String[5];
+    Util.Suit[] suits = new Util.Suit[5];
+     canvas.setColor(Color.BLUE);
 
-    //gets suites and vals of the table cards
-    Util.Suit suite1 = cardsOnTable[0].getSuit();
-    Util.Suit suite2 = cardsOnTable[1].getSuit();
-    Util.Suit suite3 = cardsOnTable[2].getSuit();
-    Util.Suit suite4 = cardsOnTable[3].getSuit();
-    Util.Suit suite5 = cardsOnTable[4].getSuit();
-    String card1 = Integer.toString(Util.getValue(cardsOnTable[0].getRank()));
-    String card2 = Integer.toString(Util.getValue(cardsOnTable[1].getRank()));
-    String card3 = Integer.toString(Util.getValue(cardsOnTable[2].getRank()));
-    String card4 = Integer.toString(Util.getValue(cardsOnTable[3].getRank()));
-    String card5 =  Integer.toString(Util.getValue(cardsOnTable[4].getRank()));
+     for(int i = 0; i < 5; i++){
+       suits[i] = cardsOnTable[i].getSuit();
+     }
 
-    AffineTransform oldConditions = canvas.getTransform();
-
-    if(currentCards == 0){
-      for(int i = 0; i < 5; i++){
-        canvas.fillRect(140, 10, 80, 110);
-        canvas.fillRect(240, 10, 80, 110);
-        canvas.fillRect(340, 10, 80, 110);
-        canvas.fillRect(440, 10, 80, 110);
-        canvas.fillRect(540, 10, 80, 110);
-      }
-    }
-    else if(currentCards == 3){
-      canvas.setColor(Color.WHITE);
-      canvas.fillRect(140, 10, 80, 110);   
-      canvas.fillRect(240, 10, 80, 110);
-      canvas.fillRect(340, 10, 80, 110);
-      canvas.setColor(Color.BLUE);
-      canvas.fillRect(440, 10, 80, 110);
-      canvas.fillRect(540, 10, 80, 110);
-
-      canvas.setColor(Color.BLACK);
-      canvas.drawString(card1 , 180, 25);
-      canvas.drawString(card2, 280, 25);
-      canvas.drawString(card3, 380, 25);
-
-      canvas.translate(160, 60);
-      drawsSuit(canvas, suite1);
-      canvas.translate(100, 0);
-      drawsSuit(canvas, suite2);
-      canvas.translate(100, 0);
-      drawsSuit(canvas, suite3);
-      
-    }
-    else if(currentCards == 4){
-      canvas.setColor(Color.WHITE);
-      canvas.fillRect(140, 10, 80, 110);
-      canvas.fillRect(240, 10, 80, 110);
-      canvas.fillRect(340, 10, 80, 110);
-      canvas.fillRect(440, 10, 80, 110);
-      canvas.setColor(Color.BLUE);
-      canvas.fillRect(540, 10, 80, 110);
-
-      canvas.setColor(Color.BLACK);
-      canvas.drawString(card1 , 180, 25);
-      canvas.drawString(card2, 280, 25);
-      canvas.drawString(card3, 380, 25);
-      canvas.drawString(card4, 480, 25);
-       
-      canvas.translate(160, 60);
-      drawsSuit(canvas, suite1);
-      canvas.translate(100, 0);
-      drawsSuit(canvas, suite2);
-      canvas.translate(100, 0);
-      drawsSuit(canvas, suite3);
-      canvas.translate(100, 0);
-      drawsSuit(canvas, suite4);
-    }
-    else{
-      canvas.setColor(Color.WHITE);
-      canvas.fillRect(140, 10, 80, 110);
-      canvas.fillRect(240, 10, 80, 110);
-      canvas.fillRect(340, 10, 80, 110);
-      canvas.fillRect(440, 10, 80, 110);
-      canvas.fillRect(540, 10, 80, 110);
-
-      canvas.setColor(Color.BLACK);
-      canvas.drawString(card1 , 180, 25);
-      canvas.drawString(card2, 280, 25);
-      canvas.drawString(card3, 380, 25);
-      canvas.drawString(card4, 480, 25);
-      canvas.drawString(card5, 580, 25);
-       
-      canvas.translate(160, 60);
-      drawsSuit(canvas, suite1);
-      canvas.translate(100, 0);
-      drawsSuit(canvas, suite2);
-      canvas.translate(100, 0);
-      drawsSuit(canvas, suite3);
-      canvas.translate(100, 0);
-      drawsSuit(canvas, suite4);
-      canvas.translate(100, 0);
-      drawsSuit(canvas, suite5);
-    }
+     for(int i = 0; i < 5; i++){
+       cardsNums[i] = Integer.toString(Util.getValue(cardsOnTable[i].getRank()));
+     }
+      int x = 140;
     
+      for(int i = 0; i < 5; i++){
+  
+        canvas.setColor(Color.BLUE);
+      
+        canvas.fillRect(x, 10, 80, 100);
+        x += 100;
+      }
+    
+     // canvas.drawString(card1 , 180, 25);
+      //canvas.drawString(card2, 280, 25);
+     // canvas.drawString(card3, 380, 25);
+
+     // canvas.translate(160, 60);
+     // drawsSuit(canvas, suite1);
+     // canvas.translate(100, 0);
+     // drawsSuit(canvas, suite2);
+
+    
+  
   }
 
   public static void drawsSuit(Graphics2D canvas, Util.Suit suite){
@@ -165,5 +98,6 @@ public class RoundGraphics {
       d.drawSymbol(canvas, 40);
     }
   }
+
 
 }
