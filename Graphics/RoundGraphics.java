@@ -47,7 +47,7 @@ public class RoundGraphics {
   public static void drawsCardsOnTable(Graphics2D canvas, int currentCards, Card[] cardsOnTable){
     String[] cardsNums = new String[5];
     Util.Suit[] suits = new Util.Suit[5];
-     canvas.setColor(Color.BLUE);
+    AffineTransform oldConditions = canvas.getTransform();
 
      for(int i = 0; i < 5; i++){
        suits[i] = cardsOnTable[i].getSuit();
@@ -56,14 +56,33 @@ public class RoundGraphics {
      for(int i = 0; i < 5; i++){
        cardsNums[i] = Integer.toString(Util.getValue(cardsOnTable[i].getRank()));
      }
-      int x = 140;
-    
-      for(int i = 0; i < 5; i++){
-  
-        canvas.setColor(Color.BLUE);
       
+      //draws card backgrounds 
+      int x = 140;
+      for(int i = 0; i < 5; i++){
+        if(i < currentCards){
+          canvas.setColor(Color.WHITE);
+        }
+        else{
+          canvas.setColor(Color.BLUE);
+        }
         canvas.fillRect(x, 10, 80, 100);
         x += 100;
+      }
+
+        int numX = 140;
+        for(int j = 0; j < currentCards; j++){
+          String val = cardsNums[j];
+          drawsCardVals(val, canvas, numX);
+          numX += 100;
+        }
+
+        canvas.translate(160, 40);
+        for(int k = 0; k < currentCards; k++){
+          drawsSuit(canvas, suits[k]);
+          canvas.translate(100, 0);
+        }
+        canvas.setTransform(oldConditions);
       }
     
      // canvas.drawString(card1 , 180, 25);
@@ -77,7 +96,7 @@ public class RoundGraphics {
 
     
   
-  }
+
 
   public static void drawsSuit(Graphics2D canvas, Util.Suit suite){
     String suit = suite.toString();
@@ -99,5 +118,23 @@ public class RoundGraphics {
     }
   }
 
+  public static void drawsCardVals(String cardVal, Graphics2D canvas, int x){
+    canvas.setFont(new Font("TimesRoman", Font.PLAIN, 10));
+    canvas.setColor(Color.BLACK);
+    int toCheck = Integer.parseInt(cardVal);
+    if(toCheck > 10){
+      if(toCheck == 11) cardVal = "J";
+      else if(toCheck == 12) cardVal = "Q";
+      else cardVal = "K";
+    }
+    if(toCheck == 10){
+      canvas.drawString(cardVal, x+5, 20 );
+      canvas.drawString(cardVal, x + 65, 105);
+    }
+    else{
+      canvas.drawString(cardVal, x+10, 20);
+      canvas.drawString(cardVal, x+65, 105);
+    }
+  }
 
 }
