@@ -73,9 +73,7 @@ public class Round {
     cardsOnTable = new Card[5];
     for (Player p : players) {
       p.setCards(d.drawCard(), d.drawCard());
-      if (p.getChips() == 0){
-        p.setFolded(true);
-      }
+      p.startNewRound();
       if (p.hasFolded()){
         foldedPlayers++;
       }
@@ -93,10 +91,7 @@ public class Round {
   private void resetPlayers(Player[] players){
     calledPlayers = 0;
     for (Player p : players) {
-      if (p.hasCalled()){
-        p.setCalled(false);
-      }
-      p.startNewRound();
+      p.startNewPhase();
     }
   }
   /*

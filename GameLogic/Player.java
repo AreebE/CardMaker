@@ -25,20 +25,18 @@ public class Player implements Comparable<Player>{
    * for when a new round starts
   */
   public void startNewRound(){
-    this.called = false;
     this.folded = chips == 0;
+    startNewPhase();
+  }
+  /*
+   * This resets the player for when a new betting phase starts.
+  */
+  public void startNewPhase(){
+    this.called = false;
     this.bestHand = null;
     this.betChips = 0;
   }
-  /*
-   * This sets the card the player has.
-   *
-   * @param c   the other card 
-  */
-  public void setCards(Card first, Card second){
-    this.cards[0] = first;
-    this.cards[1] = second;
-  }
+
 
   /*
    * @return the card the player has
